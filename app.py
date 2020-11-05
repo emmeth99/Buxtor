@@ -16,7 +16,7 @@ def index():
 
 @app.route('/hej')
 def hello():
-    return "Hejsan Roman! :) "
+    return "Hejsan Emma! :) "
 
 if __name__ == '__main__':
     
