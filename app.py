@@ -1,5 +1,5 @@
 
-from flask import Flask
+from flask import Flask, render_template
 
 # Create an instance of the Flask class that is the WSGI application.
 # The first argument is the name of the application module or package,
@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return "Välkomna! :D"
+    return render_template('index.html')
 
 @app.route('/hej')
 def hello():
