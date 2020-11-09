@@ -20,6 +20,7 @@ li {
 li a {
     display: block;
     color: rgb(144, 63, 155);
+    background-color: rgb(32, 80, 182);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
