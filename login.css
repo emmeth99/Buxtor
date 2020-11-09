@@ -12,6 +12,7 @@ header {
     font-size: 300%;
     margin-top: 0px;
     height: 200px;
+    overflow: hidden;
 }
 
 
@@ -38,9 +39,8 @@ li a:hover {
 
 ul {
     background-color: rgb(32, 80, 182);
-    height: 100px;
     margin: auto;
-    padding-top: 10px;
+    overflow: hidden;
 }
 
 a:link {

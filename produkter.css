@@ -12,6 +12,7 @@ header {
     font-size: 300%;
     margin-top: 0px;
     height: 200px;
+    overflow: hidden;
 }
 
 a:link {
@@ -40,12 +41,10 @@ li a {
 li a:hover {
     background-color: #111;
 }
-
 ul {
     background-color: rgb(32, 80, 182);
-    height: 100px;
     margin: auto;
-    padding-top: 10px;
+    overflow: hidden;
 }
 
 .nav-item2 {
