@@ -65,7 +65,7 @@ a:link {
 .bild{
     height: 500px;
     width: 70%;
-    background-image: url(images/starwars.jpg);
-    background-size: contain;
+    background-color: thistle;
     margin: auto;
+    text-align: center;
 }
