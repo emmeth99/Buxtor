@@ -1,7 +1,7 @@
 
 body {
-    background-image: url('images/starwars.jpg');
-    background-size: cover;
+    background-color: cadetblue;
+    
 }
 
 header {
@@ -15,12 +15,18 @@ header {
 
 li {
     float: left;
-  }
+}
 
-  li a {
+li a {
     display: block;
-    color: white;
+    color: rgb(144, 63, 155);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-  }
+    font-size: 200%;
+    margin-right: 50px;
+}
+
+ul {
+    background-color: blueviolet;
+}
