@@ -30,3 +30,11 @@ li a {
 ul {
     background-color: blueviolet;
 }
+
+.headerText{
+    float: left;
+}
+
+.login{
+    float: right;
+}
