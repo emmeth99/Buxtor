@@ -14,14 +14,14 @@ header {
 }
 
 li {
-    float: left;
+    
     display: inline-block;
 }
 
 li a {
     display: block;
     color: rgb(144, 63, 155);
-    
+    background-color: tan;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -35,4 +35,12 @@ li a:hover {
 
 ul {
     background-color: rgb(32, 80, 182);
+}
+
+.nav-item2 {
+    float: right;
+}
+
+.nav-item {
+    float: left;
 }
