@@ -14,11 +14,6 @@ header {
     height: 200px;
 }
 
-a:link {
-    background-color: transparent;
-    text-decoration: none;
-}
-
 
 
 li {
@@ -46,6 +41,11 @@ ul {
     height: 100px;
     margin: auto;
     padding-top: 10px;
+}
+
+a:link {
+    background-color: transparent;
+    text-decoration: none;
 }
 
 .nav-item2 {
