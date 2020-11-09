@@ -6,10 +6,7 @@ body {
 
 header {
     background-color: aquamarine;
-    color: blueviolet;
-    text-align: center;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 200%;
+
     margin-top: 0px;
 }
 
@@ -33,8 +30,17 @@ ul {
 
 .headerText{
     float: left;
+    color: blueviolet;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 400%;
 }
 
 .login{
+
     float: right;
+}
+
+.container{
+    
 }
