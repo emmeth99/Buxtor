@@ -13,3 +13,12 @@ header {
     margin-top: 0px;
 }
 
+li {
+    float: left;
+  }
+
+  a {
+    display: block;
+    padding: 8px;
+    background-color: #dddddd;
+  }
