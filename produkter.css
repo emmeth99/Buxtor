@@ -65,8 +65,7 @@ ul {
 .bild{
     height: 500px;
     width: 70%;
-    background-image: url(images/biblio.png);
-    background-size: cover;
+    background-color: violet;
     margin: auto;
-    background-repeat: no-repeat;
+    text-align: center;
 }

@@ -14,11 +14,6 @@ header {
     height: 200px;
 }
 
-a:link {
-    background-color: transparent;
-    text-decoration: none;
-}
-
 
 
 li {
@@ -48,6 +43,11 @@ ul {
     padding-top: 10px;
 }
 
+a:link {
+    background-color: transparent;
+    text-decoration: none;
+}
+
 .nav-item2 {
     float: right;
 }
@@ -65,8 +65,7 @@ ul {
 .bild{
     height: 500px;
     width: 70%;
-    background-image: url(images/biblio.png);
-    background-size: cover;
+    background-color: thistle;
     margin: auto;
-    background-repeat: no-repeat;
+    text-align: center;
 }
