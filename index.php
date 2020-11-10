@@ -11,7 +11,7 @@
     <header>
         
         <img src="images/logo.jpg" class="logo" >
-        <h1><a href="index.html" class="title">BUXTOR BOKHANDEL</a></h1>
+        <h1><a href="index.php" class="title">BUXTOR BOKHANDEL</a></h1>
     </header>
 
     
@@ -29,7 +29,7 @@
                 <a class="nav-link" href="#">Kassa</a>
             </li>
             <li class="nav-item2">
-                <a class="nav-link" href="login.html">Logga in</a>
+                <a class="nav-link" href="login.php">Logga in</a>
             </li>
         </ul>
         
