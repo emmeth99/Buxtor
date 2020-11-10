@@ -5,17 +5,19 @@ body {
 }
 
 header {
-    background-color: aquamarine;
+    background-color: #191927;
     color: blueviolet;
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 300%;
-    margin-top: 0px;
-    height: 200px;
     overflow: hidden;
 }
 
-
+.logo{
+    float: left;
+    margin-left: 4%;
+    
+}
 
 li {
     
