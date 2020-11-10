@@ -64,7 +64,7 @@ a:link {
 }
 
 .container{
-    background-color: tomato;
+    background-color: #dc0942;
     height: 100%;
     width: 100%;
 }
@@ -72,7 +72,7 @@ a:link {
 .bild{
     height: 500px;
     width: 70%;
-    background-color: thistle;
+    background-color: #c1ea17;
     margin: auto;
     text-align: center;
 }
