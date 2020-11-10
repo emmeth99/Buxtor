@@ -34,6 +34,7 @@
     <div class="container">
 
     <div class="bild">
+    
         Produkter hääär!
         <?php
             $servername = "127.0.0.1";
