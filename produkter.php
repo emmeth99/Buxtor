@@ -58,18 +58,7 @@
 
             if ($result->num_rows > 0) {
                 // output data of each row
-                while($row = $result->fetch_assoc()) { ?>
 
-                    <tr>
-                        <td> <?php echo "$row["Titel"]" ?> </td>
-                        <td>Smith</td>
-                        <td>50</td>
-                        <td>50</td>
-                    </tr>
-
-                    
-
-                <?php}
               } else {
                 echo "0 results";
             }
