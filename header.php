@@ -2,7 +2,7 @@
 <meta charset="UTF-8">
 <html>
 <head>
-<link rel="stylesheet" href="header.css">
+<link rel="stylesheet" href="css/header.css">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
 </head>
 

@@ -3,7 +3,7 @@
 <html>
 <head>
 <title>Buxtor</title>
-<link rel="stylesheet" href="produkter.css">
+<link rel="stylesheet" href="css/produkter.css">
 </head>
 <body>
     
