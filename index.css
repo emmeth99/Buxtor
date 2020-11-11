@@ -6,12 +6,18 @@ body {
 
 header {
     background-color: #191927;
-    color: rgb(199, 171, 224);
-    text-align: center;
+    color: rgb(189, 39, 209);
+    
     font-family: Cinzel Decorative;
     font-size: 300%;
     overflow: hidden;
+    
     display: block;
+}
+
+.divheader{
+    width: 89%;
+    margin: 0 auto;
 }
 
 .title:link{
