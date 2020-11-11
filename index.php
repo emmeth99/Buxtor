@@ -4,7 +4,7 @@
 <head>
 <title>Buxtor</title>
 <link rel="stylesheet" href="index.css">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+
 </head>
 <body>
     

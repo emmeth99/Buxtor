@@ -32,22 +32,24 @@
     </nav>
     <div class="container">
 
-    <div class="bild">
-        <h2>Logga in</h2>
+        <div class="bild">
 
-<form action="/action_page.php">
-  <label for="fname">E-postadress:</label><br>
-  <input type="text" id="fname" name="fname"><br>
-  <label for="lname">Lösenord:</label><br>
-  <input type="text" id="lname" name="lname"><br><br>
-  <input type="submit" value="Logga in">
-</form> 
+            <div class="login"> 
+                <h2>Logga in</h2>
 
-<p><a href="/skapauser.php">Ingen användare? Skapa en här!</a></p>
-    </div>
+                <form action="/action_page.php">
+                <label for="fname">E-postadress:</label><br>
+                <input type="text" id="fname" name="fname"><br>
+                <label for="lname">Lösenord:</label><br>
+                <input type="text" id="lname" name="lname"><br><br>
+                <input type="submit" value="Logga in">
+                </form> 
 
+                <p><a href="/skapauser.php">Ingen användare? Skapa en här!</a></p>
+            </div>
 
-        
+        </div>
+            
     </div>
 
 </body>

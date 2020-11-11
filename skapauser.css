@@ -4,6 +4,10 @@ body {
     
 }
 
+a:link {
+    background-color: transparent;
+    text-decoration: none;
+}
 
 
 li {
@@ -13,7 +17,7 @@ li {
 
 li a {
     display: block;
-    color: rgb(144, 63, 155);
+    color: #dc0942;
     background-color: tan;
     text-align: center;
     padding: 14px 16px;
@@ -23,18 +27,13 @@ li a {
 }
 
 li a:hover {
-    background-color: #111;
+    background-color: #191927
 }
 
 ul {
-    background-color: rgb(32, 80, 182);
+    background-color: #fbb10b;
     margin: auto;
     overflow: hidden;
-}
-
-a:link {
-    background-color: transparent;
-    text-decoration: none;
 }
 
 .nav-item2 {
@@ -44,7 +43,6 @@ a:link {
 .nav-item {
     float: left;
 }
-
 .container{
     background-color:  #dc0942;
     height: 100%;
