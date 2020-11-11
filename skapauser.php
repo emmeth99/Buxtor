@@ -35,25 +35,25 @@
     <div class="bild">
     <h2>Skapa användare</h2>
 
-<form action="/action_page.php">
-  <label for="fname">Förnamn:</label>
-  <input type="text" id="fname" name="fname">
-  <label for="lname">Efternamn:</label>
-  <input type="text" id="lname" name="lname"><br>
-  <label for="fname">Adress:</label>
-  <input type="text" id="fname" name="fname">
-  <label for="lname">Postnr:</label>
-  <input type="text" id="lname" name="lname"><br>
-  <label for="fname">Postadress:</label>
-  <input type="text" id="fname" name="fname">
-  <label for="lname">Mobilnr:</label>
-  <input type="text" id="lname" name="lname"><br>
-  <label for="fname">E-postadress</label>
-  <input type="text" id="fname" name="fname">
-  <label for="lname">Lösenord:</label>
-  <input type="text" id="lname" name="lname"><br>
-  <input type="submit" value="Skapa användare">
-</form> 
+        <form action="/action_page.php">
+             <label for="fname">Förnamn:</label>
+             <input type="text" id="fname" name="fname">
+             <label for="lname">Efternamn:</label>
+             <input type="text" id="lname" name="lname"><br>
+             <label for="fname">Adress:</label>
+             <input type="text" id="fname" name="fname">
+             <label for="lname">Postnr:</label>
+             <input type="text" id="lname" name="lname"><br>
+             <label for="fname">Postadress:</label>
+             <input type="text" id="fname" name="fname">
+             <label for="lname">Mobilnr:</label>
+             <input type="text" id="lname" name="lname"><br>
+             <label for="fname">E-postadress</label>
+             <input type="text" id="fname" name="fname">
+             <label for="lname">Lösenord:</label>
+             <input type="text" id="lname" name="lname"><br>
+             <input type="submit" value="Skapa användare">
+        </form> 
 
 <p>Genom att skapa en användare så äger vi dig.</p>
     </div>
