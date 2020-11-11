@@ -48,7 +48,8 @@
             if ($result->num_rows > 0) {
                 // output data of each row
                 while($row = $result->fetch_assoc()) {
-                  echo $row["Namn"]. $row["Id"]. " " . $row["Favoritfärg"]." " . $row["Humör"]."<br>";
+                  echo $row["ArtikelNamn"]. " " .$row["Pris"]." " .$row["Författare"]. " " . 
+                  $row["Beskrivning"]. ?> <img src="<?php $row["Bild"] ?>">  <?php"<br> <br>";
                 }
               } else {
                 echo "0 results";
