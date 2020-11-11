@@ -39,18 +39,39 @@
         ?>
     
         Produkter hääär!
-        <?php
+
+        <br>
+        <br>
+
+        <table style="width:100%">
+            <tr>
+                <th>Titel</th>
+                <th>Författare</th>
+                <th>Pris</th>
+                <th>Beskrivning</th>
+            </tr>
+            
+            
+            <?php
             include "connectDB.php";
 
-            $sql = "SELECT * FROM test";
+            $sql = "SELECT * FROM Vara";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
                 // output data of each row
-                while($row = $result->fetch_assoc()) {
-                  echo $row["ArtikelNamn"]. " " .$row["Pris"]." " .$row["Författare"]. " " . 
-                  $row["Beskrivning"]. ?> <img src="<?php $row["Bild"] ?>">  <?php"<br> <br>";
-                }
+                while($row = $result->fetch_assoc()) { ?>
+
+                    <tr>
+                        <td> <?php echo "$row["Titel"]" ?> </td>
+                        <td>Smith</td>
+                        <td>50</td>
+                        <td>50</td>
+                    </tr>
+
+                    
+
+                <?php}
               } else {
                 echo "0 results";
             }
@@ -58,6 +79,10 @@
 
             $conn->close();
         ?>
+
+
+                
+        </table>
     </div>
 
 
