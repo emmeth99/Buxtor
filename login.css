@@ -4,25 +4,6 @@ body {
     
 }
 
-header {
-    background-color: #191927;
-    color: rgb(199, 171, 224);
-    text-align: center;
-    font-family: Cinzel Decorative;
-    font-size: 300%;
-    overflow: hidden;
-    display: block;
-}
-
-.title:link{
-    color: #00d4f0;
-}
-
-.logo{
-    float: left;
-    margin-left: 4%;
-    
-}
 
 li {
     

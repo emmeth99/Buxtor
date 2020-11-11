@@ -9,7 +9,6 @@
 <body>
     
     <?php include "header.php" ?>
-
     
 
     <nav class="navbar">
