@@ -36,18 +36,17 @@
             echo "PHP fuuunkaaar";
         ?>
     
-        Produkter hääär!
 
         <br>
         <br>
 
         <table style="width:100%">
             <tr>
+                <th></th>
                 <th>Titel</th>
                 <th>Författare</th>
                 <th>Pris</th>
                 <th>Beskrivning</th>
-                <th></th>
             </tr>
             
             
@@ -61,11 +60,11 @@
             while($row = $result->fetch_assoc()) { ?>
 
                 <tr>
+                    <td>  <img src="<?php echo $row["Bild"] ?>" class="produktBild"> </td>
                     <td> <?php echo $row["ArtikelNamn"] ?> </td>
                     <td> <?php echo $row["Författare"] ?> </td>
-                    <td> <?php echo $row["Pris"] ?> </td>
+                    <td> <?php echo $row["Pris"] ?> kr </td>
                     <td> <?php echo $row["Beskrivning"] ?> </td>
-                    <td>  <img src="<?php echo $row["Bild"] ?>" class="produktBild"> </td>
 
                 </tr>
 
