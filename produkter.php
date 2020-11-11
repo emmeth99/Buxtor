@@ -7,9 +7,7 @@
 </head>
 <body>
     
-    <header>
-        <h1>&#128024 <a href="index.php">Buxtor Bokhandel </a>&#9924</h1>
-    </header>
+    <?php include "header.php" ?>
 
     
 

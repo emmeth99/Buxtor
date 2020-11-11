@@ -1,0 +1,31 @@
+header {
+    background-color: #191927;
+    color: rgb(189, 39, 209);
+    
+    font-family: Cinzel Decorative;
+    font-size: 300%;
+    overflow: hidden;
+    
+    display: block;
+}
+
+.divheader{
+    width: 89%;
+    margin: 0 auto;
+}
+
+.title:link{
+    color: #00d4f0;
+}
+
+.logo{
+    float: left;
+    margin-left: 4%;
+    
+    
+}
+
+a:link {
+    background-color: transparent;
+    text-decoration: none;
+}

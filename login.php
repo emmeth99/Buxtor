@@ -8,11 +8,7 @@
 </head>
 <body>
     
-    <header>
-        
-        <img src="images/logo.jpg" class="logo" >
-        <h1><a href="index.php" class="title">BUXTOR BOKHANDEL</a></h1>
-    </header>
+    <?php include "header.php" ?>
     
 
     <nav class="navbar">

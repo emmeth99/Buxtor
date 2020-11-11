@@ -8,12 +8,7 @@
 </head>
 <body>
     
-    <header>
-        <div class="divheader">
-            <img src="images/logo.jpg" class="logo" style="margin-right: 2%">
-            <h1><a href="index.php" class="title">BUXTOR&nbsp BOKHANDEL</a></h1>
-        </div>
-    </header>
+    <?php include "header.php" ?>
 
     
 
