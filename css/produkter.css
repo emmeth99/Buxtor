@@ -57,3 +57,8 @@ ul {
     margin: auto;
     text-align: center;
 }
+
+.produktBild{
+    height: 20px;
+    width: 15px;
+}

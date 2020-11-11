@@ -47,6 +47,7 @@
                 <th>Författare</th>
                 <th>Pris</th>
                 <th>Beskrivning</th>
+                <th></th>
             </tr>
             
             
@@ -56,14 +57,20 @@
             $sql = "SELECT * FROM Vara";
             $result = $conn->query($sql);
 
-            if ($result->num_rows > 0) {
-                // output data of each row
+            
+            while($row = $result->fetch_assoc()) { ?>
 
-              } else {
-                echo "0 results";
+                <tr>
+                    <td> <?php echo $row["ArtikelNamn"] ?> </td>
+                    <td> <?php echo $row["Författare"] ?> </td>
+                    <td> <?php echo $row["Pris"] ?> </td>
+                    <td> <?php echo $row["Beskrivning"] ?> </td>
+                    <td>  <img src="<?php echo $row["Bild"] ?>" class="produktBild"> </td>
+
+                </tr>
+
+            <?php 
             }
-
-
             $conn->close();
         ?>
 
