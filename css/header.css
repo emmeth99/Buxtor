@@ -25,7 +25,19 @@ header {
     
 }
 
-a:link {
+title:link {
+    background-color: transparent;
+    text-decoration: none;
+    color: #00d4f0;
+}
+
+.title:visited {
+    color: #00d4f0;
     background-color: transparent;
     text-decoration: none;
 }
+
+.title:active {
+    color: #00d4f0;
+    background-color: transparent;
+    text-decoration: none;}

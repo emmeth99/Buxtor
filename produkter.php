@@ -32,9 +32,6 @@
     <div class="container">
 
     <div class="bild">
-        <?php
-            echo "PHP fuuunkaaar";
-        ?>
     
 
         <br>
