@@ -38,10 +38,10 @@
                 <h2>Logga in</h2>
 
                 <form action="/action_page.php">
-                <label for="fname">E-postadress:</label><br>
-                <input type="text" id="fname" name="fname"><br>
-                <label for="lname">Lösenord:</label><br>
-                <input type="text" id="lname" name="lname"><br><br>
+                <label for="email">E-postadress:</label><br>
+                <input type="email" id="email" name="email"><br>
+                <label for="pwd">Lösenord:</label><br>
+                <input type="password" id="pwd" name="pwd"><br><br>
                 <input type="submit" value="Logga in">
                 </form> 
 
