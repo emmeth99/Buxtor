@@ -41,10 +41,10 @@
                 <input type="text" id="fname" name="fname">
                 <label for="lname">Efternamn:</label>
                 <input type="text" id="lname" name="lname"><br>
-                <label for="fname">E-postadress</label>
-                <input type="text" id="fname" name="fname">
-                <label for="lname">Lösenord:</label>
-                <input type="text" id="lname" name="lname"><br>
+                <label for="email">E-postadress</label>
+                <input type="email" id="email" name="email">
+                <label for="pwd">Lösenord:</label>
+                <input type="password" id="pwd" name="pwd"><br>
                 <input type="submit" value="Skapa användare">
             </form> 
 
