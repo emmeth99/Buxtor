@@ -31,25 +31,25 @@
     </nav>
     <div class="container">
 
-    <div class="bild">
-        <div class="betalning">
-            <h2>Betalning</h2>
+        <div class="bild">
+            <div class="betalning">
+                <h2>Betalning</h2>
 
-            <form action="/action_page.php">
-                <label for="fname">Adress:</label>
-                <input type="text" id="fname" name="fname">
-                <label for="lname">Postnr & Ort:</label>
-                <input type="text" id="lname" name="lname"><br>
-                <label for="fname">Kortnr:</label>
-                <input type="text" id="fname" name="fname">
-                <label for="lname">CVC/CVV:</label>
-                <input type="text" id="lname" name="lname"><br>
-                <input type="submit" value="Skapa användare">
-            </form> 
+                <form action="/action_page.php">
+                    <label for="fname">Adress:</label>
+                    <input type="text" id="fname" name="fname">
+                    <label for="lname">Postnr & Ort:</label>
+                    <input type="text" id="lname" name="lname"><br>
+                    <label for="fname">Kortnr:</label>
+                    <input type="text" id="fname" name="fname">
+                    <label for="lname">CVC/CVV:</label>
+                    <input type="text" id="lname" name="lname"><br>
+                    <input type="submit" value="Skapa användare">
+                </form> 
 
-            <p>Genom att genomföra köpet godkänner du att du ger oss pengar och får troligtvis inget tillbaka.</p>
+                <p>Genom att genomföra köpet godkänner du att du ger oss pengar och får troligtvis inget tillbaka.</p>
+            </div>
         </div>
-    </div>
 
 
         
