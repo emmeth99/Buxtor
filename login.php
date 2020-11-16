@@ -37,7 +37,7 @@
             <div class="login"> 
                 <h2>Logga in</h2>
 
-                <form action="/action_page.php">
+                <form action="minsida.php">
                 <label for="email">E-postadress:</label><br>
                 <input type="email" id="email" name="email"><br>
                 <label for="pwd">Lösenord:</label><br>
