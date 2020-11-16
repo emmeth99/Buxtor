@@ -4,17 +4,20 @@
 <?php
     include "connectDB.php";
     $email = $_POST['email'];
-    echo $email;
 
     $sql = "SELECT KundNr FROM Konto WHERE Email =  '$email' ";
     $result = $conn->query($sql);
 
-    $id = $result->fetch_assoc();
-    echo " KundNr:".$id;
+    $row = $result->fetch_assoc();
+    $id = $row['KundNr'];
+    
 
     $cookie_name = "user";
     $cookie_value = $id;
     setcookie($cookie_name, $cookie_value, time() + (86400), "/"); // 86400 = 1 day
+
+    $conn->close();
+
 ?>
 
 <html>
