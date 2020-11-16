@@ -24,7 +24,7 @@
                 <a class="nav-link" href="#">Kassa</a>
             </li>
             <li class="nav-item2">
-                <a class="nav-link" href="login.php">Logga in</a>
+                <a class="nav-link" href="minsida.php">Min sida</a>
             </li>
         </ul>
         
