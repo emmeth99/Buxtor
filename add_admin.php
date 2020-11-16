@@ -46,7 +46,7 @@
                 <label for="besk">Beskrivning:</label><br>
                 <input type="text" id="besk" name="besk"><br><br>
   
-                <label for="genre">Genre:</label>
+                <!---<label for="genre">Genre:</label>
                 <select id="genre" name="genre">
                     <option value="volvo">Deckare</option>
                     <option value="saab">Romantik</option>
@@ -55,7 +55,7 @@
                     <option value="audi">Fantasy</option></select><br><br>
     
                     Välj bild:
-                <input type="file" accept="image/*" name="fileToUpload" id="fileToUpload"><br><br>
+                <input type="file" accept="image/*" name="fileToUpload" id="fileToUpload"><br><br>-->
   
     
                 <input type="submit" value="Lägg till">
