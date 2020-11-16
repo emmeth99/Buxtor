@@ -24,7 +24,7 @@
                 <a class="nav-link" href="#">Kassa</a>
             </li>
             <li class="nav-item2">
-                <a class="nav-link" href="minsida.php">Min sida</a>
+                <a class="nav-link" href="login.php">Logga in</a>
             </li>
         </ul>
         
@@ -36,7 +36,7 @@
         <div class="skapa">
             <h2>Lägg till vara</h2>
 
-            <form action="/action_add_admin.php"> <!--method="post" enctype="multipart/form-data"-->
+            <form action="/action_add_admin.php" method="post" enctype="multipart/form-data">
                 <label for="name">Artikelnamn:</label><br>
                 <input type="text" id="name" name="name"><br>
                 <label for="pris">Pris:</label><br>
@@ -46,16 +46,16 @@
                 <label for="besk">Beskrivning:</label><br>
                 <input type="text" id="besk" name="besk"><br><br>
   
-                <!---<label for="genre">Genre:</label>
+                <label for="genre">Genre:</label>
                 <select id="genre" name="genre">
-                    <option value="volvo">Deckare</option>
-                    <option value="saab">Romantik</option>
-                    <option value="fiat">Fakta</option>
-                    <option value="audi">Humor</option>
-                    <option value="audi">Fantasy</option></select><br><br>
+                    <option value="deckare">Deckare</option>
+                    <option value="romantik">Romantik</option>
+                    <option value="fakta">Fakta</option>
+                    <option value="humor">Humor</option>
+                    <option value="fantasy">Fantasy</option></select><br><br>
     
                     Välj bild:
-                <input type="file" accept="image/*" name="fileToUpload" id="fileToUpload"><br><br>-->
+                <input type="file" accept="image/*" name="fileToUpload" id="fileToUpload"><br><br>
   
     
                 <input type="submit" value="Lägg till">
