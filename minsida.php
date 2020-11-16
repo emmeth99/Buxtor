@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <meta charset="UTF-8">
+
+<?php
+$cookie_name = "user";
+$cookie_value = "$_POST["name"]";
+setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
+?>
+
 <html>
 <head>
 <title>Buxtor</title>
@@ -34,19 +41,7 @@
 
         <div class="bild">
 
-            <div class="login"> 
-                <h2>Logga in</h2>
-
-                <form action="minsida.php" method="post">
-                <label for="email">E-postadress:</label><br>
-                <input type="email" id="email" name="email"><br>
-                <label for="pwd">Lösenord:</label><br>
-                <input type="password" id="pwd" name="pwd"><br><br>
-                <input type="submit" value="Logga in">
-                </form> 
-
-                <p><a href="/skapauser.php">Ingen användare? Skapa en här!</a></p>
-            </div>
+            
 
         </div>
             
