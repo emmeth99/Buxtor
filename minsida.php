@@ -2,9 +2,15 @@
 <meta charset="UTF-8">
 
 <?php
-$cookie_name = "user";
-$cookie_value = "$_POST["name"]";
-setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
+    include "connectDB.php";
+
+    $sql = "SELECT KundNr FROM Konto WHERE Email = $_POST['name']";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+
+    $cookie_name = "user";
+    $cookie_value = $row['KundNr'];
+    setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
 ?>
 
 <html>
