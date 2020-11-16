@@ -16,7 +16,7 @@
     $cookie_value = $id;
     setcookie($cookie_name, $cookie_value, time() + (86400), "/"); // 86400 = 1 day
 
-    $conn->close();
+    
 
 ?>
 
@@ -55,7 +55,21 @@
         <div class="bild">
 
             <?php
+                $user = $_COOKIE[$cookie_name];
+
+                $sql = "SELECT Rank FROM Konto WHERE KundNr =  '$user' ";
+                $result = $conn->query($sql);
+
+                $row = $result->fetch_assoc();
+                $rank = $row['Rank'];
+
+                if($rank == "admin"){
+                    include "minsida_admin.php";
+                }else if($rank == "kund"){
+                    include "minsida_kund.php";
+                }
                 
+                $conn->close();
 
             ?>
 
