@@ -19,6 +19,7 @@ if ($conn->query($sql) === TRUE) {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 */
+$conn->close();
 
 $target_dir = "images/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
