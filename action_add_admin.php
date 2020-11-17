@@ -16,19 +16,31 @@ $genre = $_POST['genre'];
 $author = $_POST['author'];
 $besk = $_POST['besk'];
 
-$sql = "INSERT INTO `Vara`(`ArtikelNamn`, `Pris`, `Genre`, `Författare`, `Beskrivning`) 
-VALUES ("$name","$pris","$genre","$author","$besk")";
 
-if ($conn->query($sql) === TRUE) {
+$sql = "INSERT INTO `Vara`(`ArtikelNamn`, `Pris`, `Genre`, `Författare`, `Beskrivning`) 
+VALUES ('$name','$pris','$genre','$author','$besk')";
+
+if ($conn->query($sql) == TRUE) {
     echo "New record created successfully";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
+$sql = "SELECT ArtikelNr FROM Vara WHERE ArtikelNamn = '$name'";
+$result = $conn->query($sql);
+$row = $result->fetch_assoc();
+$ArtikelNr = $row['ArtikelNr'];
+$bildURL = "images/" . $ArtikelNr . ".jpg";
+
+$sql = "UPDATE Vara SET Bild = '$bildURL' WHERE ArtikelNr = '$ArtikelNr'";
+//Ta EJ bort nedanstående rad, den är livsviktig
+$conn->query($sql);
+
+
 $conn->close();
 
 $target_dir = "images/";
-$target_file = $target_dir . "aaaaa.jpg";
+$target_file = $bildURL;
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
