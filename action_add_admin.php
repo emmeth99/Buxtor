@@ -1,8 +1,25 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <meta charset="UTF-8">
 
 
 <?php
+
+include "connectDB.php";
+/*
+$UserId = $_POST['testName'];
+
+$sql = "INSERT INTO UserProfile (UserId) VALUES ('$UserId')";
+
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+*/
+
 $target_dir = "images/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
