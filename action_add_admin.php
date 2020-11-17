@@ -87,4 +87,6 @@ if ($uploadOk == 0) {
     echo " error: ".$_FILES['fileToUpload']['error'];
   }
 }
+
+header("Location: http://92.32.39.21:8080/minsida_admin.php");
 ?>
