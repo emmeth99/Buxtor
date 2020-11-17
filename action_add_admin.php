@@ -9,17 +9,22 @@
 
 
 include "connectDB.php";
-/*
-$UserId = $_POST['testName'];
 
-$sql = "INSERT INTO UserProfile (UserId) VALUES ('$UserId')";
+$name = $_POST['name'];
+$pris = $_POST['pris'];
+$genre = $_POST['genre'];
+$author = $_POST['author'];
+$besk = $_POST['besk'];
+
+$sql = "INSERT INTO `Vara`(`ArtikelNamn`, `Pris`, `Genre`, `Författare`, `Beskrivning`) 
+VALUES ("$name","$pris","$genre","$author","$besk")";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
-*/
+
 $conn->close();
 
 $target_dir = "images/";
