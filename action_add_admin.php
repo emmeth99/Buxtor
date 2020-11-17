@@ -7,6 +7,7 @@
 
 <?php
 
+
 include "connectDB.php";
 /*
 $UserId = $_POST['testName'];
@@ -66,6 +67,7 @@ if ($uploadOk == 0) {
     echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
   } else {
     echo "Sorry, there was an error uploading your file.";
+    echo $_FILES['fileToUpload']['error'];
   }
 }
 ?>
