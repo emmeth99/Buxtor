@@ -1,5 +1,16 @@
 <!DOCTYPE html>
 <meta charset="UTF-8">
+
+<?php
+    if(isset($_COOKIE["user"])) {
+        $cookieIsSet = true;
+        echo "cookie:  ". $_COOKIE["user"];
+    } else {
+        echo "Cookie is not set!<br>";
+        
+    }
+?>
+
 <html>
 <head>
 <title>Buxtor</title>
@@ -10,6 +21,7 @@
     
     <?php include "header.php" ?>
     
+
 
     <nav class="navbar">
 
@@ -24,7 +36,11 @@
                 <a class="nav-link" href="#">Kassa</a>
             </li>
             <li class="nav-item2">
-                <a class="nav-link" href="login.php">Logga in</a>
+                <a class="nav-link" href="<?php if($cookieIsSet){
+            echo "minsida.php";
+        }else{
+            echo "login.php";
+        } ?>"> aaa </a>
             </li>
         </ul>
         

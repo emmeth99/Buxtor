@@ -45,7 +45,7 @@
                 <input type="submit" value="Logga in">
                 </form> 
 
-                <p><a href="/skapauser.php">Ingen användare? Skapa en här!</a></p>
+                <p><a href="skapauser.php">Ingen användare? Skapa en här!</a></p>
             </div>
 
         </div>

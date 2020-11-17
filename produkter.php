@@ -1,5 +1,17 @@
 <!DOCTYPE html>
 <meta charset="UTF-8">
+
+
+<?php
+        if(isset($_COOKIE["user"])) {
+            $cookieIsSet = true;
+            echo $_COOKIE["user"];
+        } else {
+            echo "Cookie is not set!<br>";
+            
+        }
+    ?>
+
 <html>
 <head>
 <title>Buxtor</title>
@@ -9,7 +21,6 @@
     
     <?php include "header.php" ?>
 
-    
 
     <nav class="navbar">
 
