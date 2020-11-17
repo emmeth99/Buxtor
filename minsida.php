@@ -32,16 +32,18 @@
 
     $conn->close();
 
-    if(isset($_COOKIE["user"] && $_SESSION["rank"] == "admin"){
+    if(isset($_COOKIE["user"]) && $_SESSION["rank"] == "admin"){
         header("Location: http://92.32.39.21:8080/minsida_admin.php");
-        exit();
-    }elseif(isset($_COOKIE["user"] && $_SESSION["rank"] == "kund"){
+        
+    }elseif(isset($_COOKIE["user"]) && ($_SESSION["rank"] == "kund")){
         header("Location: http://92.32.39.21:8080/minsida_kund.php");        
-        exit();
+        
     }else{
         header("Location: http://92.32.39.21:8080/login.php"); /* Redirect browser */
-        exit();
+        
     }   
+
+
 
 
 ?>
