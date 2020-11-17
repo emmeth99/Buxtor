@@ -34,21 +34,15 @@
 
     if(isset($_COOKIE["user"] && $_SESSION["rank"] == "admin"){
         header("Location: http://92.32.39.21:8080/minsida_admin.php");
-        exit;
+        exit();
     }elseif(isset($_COOKIE["user"] && $_SESSION["rank"] == "kund"){
         header("Location: http://92.32.39.21:8080/minsida_kund.php");        
-        exit;
+        exit();
     }else{
         header("Location: http://92.32.39.21:8080/login.php"); /* Redirect browser */
-        exit;
+        exit();
     }   
 
 
 ?>
 
-<html>
-
-
-
-
-</html>
