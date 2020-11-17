@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <meta charset="UTF-8">
 
@@ -11,12 +14,25 @@
     $row = $result->fetch_assoc();
     $id = $row['KundNr'];
     
-
+    
     $cookie_name = "user";
     $cookie_value = $id;
-    setcookie($cookie_name, $cookie_value, time() + (86400), "/"); // 86400 = 1 day
+    setcookie($cookie_name, $cookie_value, time() + (86400), "/"); 
 
-    
+    echo "value: ".$cookie_value;
+
+    $user = $_COOKIE[$cookie_name];
+
+    $sql = "SELECT Rank FROM Konto WHERE KundNr =  '$user' ";
+    $result = $conn->query($sql);
+
+    $row = $result->fetch_assoc();
+    $rank = $row['Rank'];
+
+    $_SESSION["rank"] = $rank;
+    echo "rank: " . $_SESSION["rank"];
+
+    $conn->close();
 
 ?>
 
@@ -43,9 +59,21 @@
             <li class="nav-item2">
                 <a class="nav-link" href="#">Kassa</a>
             </li>
-            <li class="nav-item2">
-                <a class="nav-link" href="minsida.php">Min Sida</a>
-            </li>
+
+            <?php if(isset($_COOKIE["user"] && $_SESSION["rank"] == "admin"){
+                    echo '<li class="nav-item2">
+                    <a class="nav-link" href="minsida_admin.php">Admin</a>
+                    </li>';
+                }else if(isset($_COOKIE["user"] && $_SESSION["rank"] == "kund"){
+                    echo '<li class="nav-item2">
+                    <a class="nav-link" href="minsida_kund.php">Min sida/a>
+                    </li>';
+                }else{
+                    echo '<li class="nav-item2">
+                    <a class="nav-link" href="login.php">Logga in</a>
+                    </li>';
+                }   
+            ?>
         </ul>
         
         
@@ -55,13 +83,7 @@
         <div class="bild">
 
             <?php
-                $user = $_COOKIE[$cookie_name];
-
-                $sql = "SELECT Rank FROM Konto WHERE KundNr =  '$user' ";
-                $result = $conn->query($sql);
-
-                $row = $result->fetch_assoc();
-                $rank = $row['Rank'];
+                
 
                 if($rank == "admin"){
                     include "minsida_admin.php";
@@ -69,7 +91,17 @@
                     include "minsida_kund.php";
                 }
                 
-                $conn->close();
+                
+
+                if(isset($_COOKIE[$cookie_name])) {
+                    echo "Cookie named '" . $cookie_name . "' is set!";
+                    echo "Value is: " . $_COOKIE[$cookie_name];
+                } else {
+                    echo "Cookie '" . $cookie_name . "' is not set!<br>";
+                    
+                }
+
+                
 
             ?>
 
