@@ -32,10 +32,10 @@
 
     $conn->close();
 
-    if(isset($_COOKIE["user"]) && $_SESSION["rank"] == "admin"){
+    if($rank == "admin"){
         header("Location: http://92.32.39.21:8080/minsida_admin.php");
         
-    }elseif(isset($_COOKIE["user"]) && ($_SESSION["rank"] == "kund")){
+    }elseif($rank == "kund"){
         header("Location: http://92.32.39.21:8080/minsida_kund.php");        
         
     }else{

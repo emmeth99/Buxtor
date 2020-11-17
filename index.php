@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <meta charset="UTF-8">
 
@@ -9,6 +12,7 @@
         echo "Cookie is not set!<br>";
         
     }
+    echo $_SESSION["rank"];
 ?>
 
 <html>
@@ -36,8 +40,10 @@
                 <a class="nav-link" href="#">Kassa</a>
             </li>
             <li class="nav-item2">
-                <a class="nav-link" href="<?php if($cookieIsSet){
-            echo "minsida.php";
+                <a class="nav-link" href="<?php if($_SESSION["rank"] == "admin"){
+            echo "minsida_admin.php";
+        }elseif($_SESSION["rank"] == "kund"){
+            echo "minsida_kund.php";
         }else{
             echo "login.php";
         } ?>"> aaa </a>
