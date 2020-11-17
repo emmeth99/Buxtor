@@ -40,14 +40,14 @@
                 <h1> AAAAAAAAAAAAAAAAa </h1>
                 <a href="add_admin.php"> Lägg till varor </a>
 
-                <button onclick="logout()">Logga ut</button>
+                <form method="post" action="logout.php">
+                    <button type="submit">Logga ut</button>
+                </form>
             </div>
 
         </div>
             
     </div>
-
-
 
 
 </body>

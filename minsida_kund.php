@@ -37,7 +37,9 @@
         <div class="bild">
 
             <h2> Hej! Du är en kund :)</h2>
-            <button onclick="logout()">Logga ut</button>
+            <form method="post" action="logout.php">
+                    <button type="submit">Logga ut</button>
+            </form>
 
         </div>
             
@@ -47,13 +49,3 @@
 </html>
 
 
-<script>
-    function logout() {
-        <?php 
-            setcookie("user", "", time() - 3600); 
-            session_unset();
-            session_destroy();
-            //header("Location: http://92.32.39.21:8080/");
-        ?>
-    }
-</script>

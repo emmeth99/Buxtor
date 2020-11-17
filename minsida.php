@@ -20,9 +20,7 @@
     setcookie($cookie_name, $cookie_value, time() + (86400), "/"); 
 
 
-    $user = $_COOKIE[$cookie_name];
-
-    $sql = "SELECT Rank FROM Konto WHERE KundNr =  '$user' ";
+    $sql = "SELECT Rank FROM Konto WHERE KundNr =  '$id' ";
     $result = $conn->query($sql);
 
     $row = $result->fetch_assoc();
