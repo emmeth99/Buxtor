@@ -36,7 +36,7 @@
         <div class="skapa">
             <h2>Lägg till vara</h2>
 
-            <form action="/action_add_admin.php" method="post" enctype="multipart/form-data">
+            <form action="action_add_admin.php" method="post" enctype="multipart/form-data">
                 <label for="name">Artikelnamn:</label><br>
                 <input type="text" id="name" name="name"><br>
                 <label for="pris">Pris:</label><br>
