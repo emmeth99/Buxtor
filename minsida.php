@@ -15,6 +15,7 @@
     $id = $row['KundNr'];
     
     
+    
     $cookie_name = "user";
     $cookie_value = $id;
     setcookie($cookie_name, $cookie_value, time() + (86400), "/"); 
