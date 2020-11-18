@@ -7,14 +7,18 @@
 <?php
     include "connectDB.php";
     $email = $_POST['email'];
+    $pwd = $_POST['pwd'];
 
-    $sql = "SELECT KundNr FROM Konto WHERE Email =  '$email' ";
+    $sql = "SELECT KundNr, Lösenord FROM Konto WHERE Email =  '$email' ";
     $result = $conn->query($sql);
 
     $row = $result->fetch_assoc();
     $id = $row['KundNr'];
     
-    
+    if($pwd != $row['Lösenord']){
+        header("Location: http://92.32.39.21:8080/login.php");
+        exit();
+    }
     
     $cookie_name = "user";
     $cookie_value = $id;

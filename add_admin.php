@@ -11,25 +11,8 @@
     <?php include "header.php" ?>
     
 
-    <nav class="navbar">
-
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="produkter.php">Kategorier</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="produkter.php">Författare</a>
-            </li>
-            <li class="nav-item2">
-                <a class="nav-link" href="#">Kassa</a>
-            </li>
-            <li class="nav-item2">
-                <a class="nav-link" href="minsida.php">Min sida</a>
-            </li>
-        </ul>
-        
-        
-    </nav>
+    <?php include "navbar.php" ?>
+    
     <div class="container">
 
     <div class="bild">
