@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <meta charset="UTF-8">
 
+<?php echo $_GET['artikelnr']; ?>
 
 <html>
 <head>
@@ -23,21 +24,18 @@
     <div class="info">
         
         <?php
-            include "connectDB";
+            include "connectDB.php";
 
-            echo "hej";
             $tmp = $_GET['artikelnr'];
 
             $sql = "SELECT * FROM Vara WHERE ArtikelNr = '$tmp'";
-            echo "222";
+
             $result = $conn->query($sql);
-            echo "333";
+
             $row = $result->fetch_assoc();
-            
-            echo "44";
+
             $conn->close();
 
-            echo "ååå";
 
         ?>
 
