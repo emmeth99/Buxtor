@@ -4,17 +4,6 @@
 <!DOCTYPE html>
 <meta charset="UTF-8">
 
-<?php
-    if(isset($_COOKIE["user"])) {
-        $cookieIsSet = true;
-        echo "cookie:  ". $_COOKIE["user"];
-    } else {
-        echo "Cookie is not set!<br>";
-        
-    }
-    echo $_SESSION["rank"];
-?>
-
 <html>
 <head>
 <title>Buxtor</title>
