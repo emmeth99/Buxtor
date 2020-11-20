@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <meta charset="UTF-8">
 
-<?php echo $_GET['artikelnr']; ?>
+
 
 <html>
 <head>
