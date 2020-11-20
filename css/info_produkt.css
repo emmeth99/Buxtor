@@ -1,0 +1,22 @@
+
+body {
+    background-color: #00d4f0;
+    
+}
+
+
+.container{
+    background-color: #dc0942;
+    height: 100%;
+    width: 100%;
+}
+
+
+
+.info{
+    height: 500px;
+    width: 70%;
+    background-color: #c1ea17;
+    margin: auto;
+    text-align: center;
+}

@@ -5,16 +5,6 @@
 <meta charset="UTF-8">
 
 
-<?php
-        if(isset($_COOKIE["user"])) {
-            $cookieIsSet = true;
-            echo $_COOKIE["user"];
-        } else {
-            echo "Cookie is not set!<br>";
-            
-        }
-    ?>
-
 <html>
 <head>
 <title>Buxtor</title>
@@ -54,7 +44,9 @@
 
                 <tr>
                     <td>  <img src="<?php echo $row["Bild"] ?>" class="produktBild"> </td>
-                    <td> <?php echo $row["ArtikelNamn"] ?> </td>
+
+                    <td> <a href=" <?php echo "info_produkt.php?artikelnr=".$row['ArtikelNr'] ?> "> <?php echo $row["ArtikelNamn"] ?> </a> </td>
+                    
                     <td> <?php echo $row["Författare"] ?> </td>
                     <td> <?php echo $row["Pris"] ?> kr </td>
                     <td> <?php echo $row["Beskrivning"] ?> </td>
