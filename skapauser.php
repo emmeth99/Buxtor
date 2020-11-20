@@ -19,7 +19,7 @@
         <div class="skapa">
             <h2>Skapa användare</h2>
 
-            <form action="/action_page.php" method="post">
+            <form action="/action_skapauser.php" method="post">
                 <label for="fname">Förnamn:</label>
                 <input type="text" id="fname" name="fname">
                 <label for="lname">Efternamn:</label>
