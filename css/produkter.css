@@ -6,13 +6,13 @@ body {
 
 .container{
     background-color: #dc0942;
-    height: 100%;
+    height: auto;
     width: 100%;
-    position: relative;
+    
 }
 
 .bild{
-    height: 100%;
+    height: inherit;
     width: 70%;
     background-color: #c1ea17;
     margin: auto;

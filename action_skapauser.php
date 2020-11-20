@@ -17,7 +17,7 @@ $pwd = $_POST['pwd'];
 
 
 $sql = "INSERT INTO `Konto`(`Förnamn`, `Efternamn`, `Email`, `Rank`, `Lösenord`) 
-VALUES ('$fname','$lname','$email',"kund",'$pwd')";
+VALUES ('$fname','$lname','$email','kund','$pwd')";
 
 if ($conn->query($sql) == TRUE) {
     echo "New record created successfully";
