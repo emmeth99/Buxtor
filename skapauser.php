@@ -27,7 +27,7 @@
                 <label for="email">E-postadress</label>
                 <input type="email" id="email" name="email">
                 <label for="pwd">Lösenord:</label>
-                <input type="password" id="pwd" name="pwd"><br>
+                <input type="password" id="pwd" name="pwd"><br><br>
                 <input type="submit" value="Skapa användare">
             </form> 
 
