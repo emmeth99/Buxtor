@@ -21,13 +21,13 @@
 
             <form action="/action_skapauser.php" method="post">
                 <label for="fname">Förnamn:</label>
-                <input type="text" id="fname" name="fname">
+                <input type="text" id="fname" name="fname" required>
                 <label for="lname">Efternamn:</label>
-                <input type="text" id="lname" name="lname"><br>
+                <input type="text" id="lname" name="lname" required><br>
                 <label for="email">E-postadress</label>
-                <input type="email" id="email" name="email">
+                <input type="email" id="email" name="email" required>
                 <label for="pwd">Lösenord:</label>
-                <input type="password" id="pwd" name="pwd"><br><br>
+                <input type="password" id="pwd" name="pwd" required><br><br>
                 <input type="submit" value="Skapa användare">
             </form> 
 
