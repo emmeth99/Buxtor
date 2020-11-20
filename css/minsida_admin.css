@@ -4,22 +4,18 @@ body {
     
 }
 
+
 .container{
     background-color: #dc0942;
     height: 100%;
     width: 100%;
-    position: relative;
 }
 
-.bild{
-    height: 100%;
+.admin{
+    height: 500px;
     width: 70%;
-    background-color: #c1ea17;
     margin: auto;
+    padding-top: 7%;
     text-align: center;
-}
-
-.produktBild{
-    height: 100px;
-    width: 70px;
+    background-color: #c1ea17;
 }
