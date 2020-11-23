@@ -23,7 +23,7 @@
                 <label for="name">Artikelnamn:</label><br>
                 <input type="text" id="name" name="name" required><br>
                 <label for="pris">Pris:</label><br>
-                <input type="text" id="pris" name="pris" required><br>
+                <input type="number" id="pris" name="pris" required><br>
                 <label for="author">Författare:</label><br>
                 <input type="text" id="author" name="author" required><br>
                 <label for="besk">Beskrivning:</label><br>
