@@ -16,7 +16,7 @@ body {
     width: 70%;
     background-color: #c1ea17;
     margin: auto;
-    text-align: left;
+    text-align: center;
 }
 
 .produktBild{
@@ -30,3 +30,6 @@ body {
 th {
     text-align: left;
   }
+td {
+    text-align: left;
+}
