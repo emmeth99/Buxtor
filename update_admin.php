@@ -48,7 +48,7 @@ if(isset($article)){
                 <label for="author">Författare:</label><br>
                 <input type="text" id="author" name="author" value= <?php echo $row["Författare"] ?>><br>
                 <label for="besk">Beskrivning:</label><br>
-                <textarea name="comment" rows="5" cols="40" value= <?php echo $row["Beskrivning"] ?>></textarea><br><br>
+                <textarea name="comment" rows="5" cols="40" id="besk" value= <?php echo $row["Beskrivning"] ?>></textarea><br><br>
   
                 <label for="genre">Genre:</label>
                 <select id="genre" name="genre">
