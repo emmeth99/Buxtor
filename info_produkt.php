@@ -37,7 +37,20 @@
             $conn->close();
 
 
+
         ?>
+
+        <div class="text">
+            <h1> <?php echo $row['ArtikelNamn'] ?> </h1>
+
+        </div>
+
+
+        <div class="bild">
+            <img src="<?php echo $row["Bild"] ?>" class="produktBild">
+            <h2> <?php echo $row['Pris'] ?> kr </h2>
+        </div>
+        
 
     </div>
 
