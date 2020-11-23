@@ -24,13 +24,13 @@
         <br>
         <div class="tabell">
         <table style="width:100%">
-            <tr>
+            <div class="top"><tr>
                 <th></th>
-                <p style="font-size:30px"><th>Titel</th>
+                <th>Titel</th>
                 <th>Författare</th>
-                <th>Pris</th></p>
+                <th>Pris</th>
                 
-            </tr>
+            </tr></div>
             
             
             <?php
