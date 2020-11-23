@@ -20,14 +20,19 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     include "connectDB.php";
+    $antal = $_POST["antal"];
+    $kaka = $_COOKIE["user"];
+    echo "antal: ".$antal;
 
-    $sql = "SELECT Antal FROM Varukorg WHERE ArtikelNr = '$artikel' && KundNr = '$_COOKIE['user']'";
+    $sql = "SELECT Antal FROM Varukorg WHERE (ArtikelNr = '$artikel' AND KundNr = '$kaka')";
     $result = $conn->query($sql);
     if($row = $result->fetch_assoc()){
-        $sql = "UPDATE Varukorg SET Antal = ($row['Antal'] + $_POST['antal'])";
+        $sql = "UPDATE Varukorg SET Antal = ('$row["Antal"]' + '$antal')";
+        $result = $conn->query($sql);
     }else{
         $sql = "INSERT INTO Varukorg(KundNr, ArtikelNr, Antal) 
-        VALUES ('$_COOKIE["user"]','$artikel','$_POST[""]')";
+        VALUES ('$kaka','$artikel','$antal')";
+        $result = $conn->query($sql);
     }
 
     
