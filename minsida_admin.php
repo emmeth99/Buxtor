@@ -21,7 +21,8 @@
 
             <div class="admin">
                 <h1> AAAAAAAAAAAAAAAAa </h1>
-                <a href="add_admin.php"> Lägg till varor </a>
+                <a href="add_admin.php"> Lägg till varor </a>   <br>
+                <a href="update_admin.php"> Redigera varor</a>   <br> <br>
 
                 <form method="post" action="logout.php">
                     <button type="submit">Logga ut</button>
