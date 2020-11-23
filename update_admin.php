@@ -43,13 +43,13 @@ if(isset($article)){
 
             <form action="action_update_admin.php" method="post">
                 <label for="name">Artikelnamn:</label><br>
-                <input type="text" id="name" name="name" value = <?php echo $row["ArtikelNamn"] ?>><br>
+                <input type="text" id="name" name="name" value = '<?php echo $row["ArtikelNamn"] ?>'><br>
                 <label for="pris">Pris:</label><br>
                 <input type="number" id="pris" name="pris" value= <?php echo $row["Pris"] ?>><br>
                 <label for="author">Författare:</label><br>
-                <input type="text" id="author" name="author" value= <?php echo $row["Författare"] ?>><br>
+                <input type="text" id="author" name="author" value= '<?php echo $row["Författare"] ?>'><br>
                 <label for="besk">Beskrivning:</label><br>
-                <input type="text" name="besk" id="besk" size="69" value= <?php echo $row["Beskrivning"] ?>><br><br>
+                <input type="text" name="besk" id="besk" size="69" value= '<?php echo $row["Beskrivning"] ?>'><br><br>
   
                 <label for="genre">Genre:</label>
                 <select id="genre" name="genre">
