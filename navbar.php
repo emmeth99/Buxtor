@@ -22,7 +22,7 @@
                 <a class="nav-link" href="produkter.php">Författare</a>
             </li>
             <li class="nav-item2">
-                <a class="nav-link" href="#">Kassa</a>
+                <a class="nav-link" href="kassa.php">Kassa</a>
             </li>
             <li class="nav-item2">
 

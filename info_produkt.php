@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if($row = $result->fetch_assoc()){
             $plus = $row["Antal"] + $antal;
             echo "finns redan";
-            $sql = "UPDATE Varukorg SET Antal = '$plus'";
+            $sql = "UPDATE Varukorg SET Antal = '$plus' WHERE (ArtikelNr = '$artikel' AND KundNr = '$kaka')";
             $result = $conn->query($sql);
         }else{
             echo "finns ej";
@@ -46,8 +46,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             VALUES ('$kaka','$artikel','$antal')";
             $result = $conn->query($sql);
         }
-
+        
         $conn->close();
+        header("Location: http://92.32.39.21:8080/kassa.php");
     }else{
         echo "Du måste logga in först!";
     }
@@ -97,7 +98,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <img src="<?php echo $row["Bild"] ?>" class="produktBild">
             <h2> <?php echo $row['Pris'] ?> kr </h2>
             
-            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])?>">
+            <form method="post" action="
+            
+            <?php if(isset($_COOKIE) && $_SESSION['rank'] == 'kund'){
+                echo htmlspecialchars($_SERVER["PHP_SELF"]);
+            }else{
+                echo "<script>alert('Du måste logga in!');</script>"; 
+            }
+            
+            ?>
+            
+            ">
                 <label for="antal">Antal:</label>
                 <input type="number" id="antal" name="antal" value= "1">
                 <input type ="hidden" id="artikel" name="artikel" value= "<?php echo $artikel ?>">
