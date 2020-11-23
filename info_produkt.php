@@ -20,11 +20,22 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     include "connectDB.php";
+    $antal = $_POST["antal"];
+    $kaka = $_COOKIE["user"];
+    echo "antal: ".$antal;
 
-    $sql = "SELECT ";
+    $sql = "SELECT Antal FROM Varukorg WHERE (ArtikelNr = '$artikel' AND KundNr = '$kaka')";
+    $result = $conn->query($sql);
+    if($row = $result->fetch_assoc()){
+        $sql = "UPDATE Varukorg SET Antal = ('$row["Antal"]' + '$antal')";
+        $result = $conn->query($sql);
+    }else{
+        $sql = "INSERT INTO Varukorg(KundNr, ArtikelNr, Antal) 
+        VALUES ('$kaka','$artikel','$antal')";
+        $result = $conn->query($sql);
+    }
 
-    //$sql = "INSERT INTO `Varukorg`(`Förnamn`, `Efternamn`, `Email`, `Rank`, `Lösenord`) 
-    //VALUES ('$fname','$lname','$email','kund','$pwd')";
+    
 }
 
 
@@ -42,9 +53,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php
             include "connectDB.php";
 
-            $tmp = $_GET['artikelnr'];
+            $artikel = $_GET['artikelnr'];
 
-            $sql = "SELECT * FROM Vara WHERE ArtikelNr = '$tmp'";
+            $sql = "SELECT * FROM Vara WHERE ArtikelNr = '$artikel'";
 
             $result = $conn->query($sql);
 
@@ -68,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <h2> <?php echo $row['Pris'] ?> kr </h2>
             
             <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-                <label for="pris">Antal:</label>
+                <label for="antal">Antal:</label>
                 <input type="number" id="antal" name="antal" value= "1">
                 <input type="submit" value="KÖP"><br><br>
             </form>
