@@ -10,16 +10,13 @@
 
 <?php 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $article = $_POST["article"];
-}
-
+    $article = test_input($_POST["article"]);
+    }
 
 if(isset($article)){
-    include "connectDB.php";
-    $sql = "SELECT * FROM Vara Where ArtikelNr = '$article'";
-    $result = $conn->query($sql);
-   $row = $result->fetch_assoc();
-   $conn->close();
+    $sql = "SELECT * FROM Vara Where 'ArtkelNr' = '$article'";
+            $result = $conn->query($sql);
+            $row = $result->fetch_assoc();
 }
 ?>
     
@@ -48,7 +45,7 @@ if(isset($article)){
                 <label for="author">Författare:</label><br>
                 <input type="text" id="author" name="author" value= <?php echo $row["Författare"] ?>><br>
                 <label for="besk">Beskrivning:</label><br>
-                <textarea name="comment" rows="5" cols="40" id="besk" value= <?php echo $row["Beskrivning"] ?>></textarea><br><br>
+                <input type="text" id="besk" name="besk" rows="5" cols="40" value= <?php echo $row["Beskrivning"] ?>><br><br>
   
                 <label for="genre">Genre:</label>
                 <select id="genre" name="genre">
