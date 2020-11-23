@@ -42,6 +42,8 @@ if(isset($article)){
             </form>
 
             <form action="action_update_admin.php" method="post">
+                <label for="article">Artikelnr:</label><br>
+                <input type="text" id="article" name="article" value = '<?php echo $row["ArtikelNr"] ?>'><br>
                 <label for="name">Artikelnamn:</label><br>
                 <input type="text" id="name" name="name" value = '<?php echo $row["ArtikelNamn"] ?>'><br>
                 <label for="pris">Pris:</label><br>
