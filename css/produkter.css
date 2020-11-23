@@ -32,6 +32,9 @@ th {
   }
 .tabell {
     height: 70%;
-    width: 100%;
-    padding-top: 8%;
+    width: 70%;
+    padding-top: 3%;
 }
+td {
+    text-align: left;
+  }
