@@ -101,9 +101,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <form method="post" action="
             
             <?php if(isset($_COOKIE) && $_SESSION['rank'] == 'kund'){
-                echo htmlspecialchars($_SERVER["PHP_SELF"]);
+                echo htmlspecialchars($_SERVER['PHP_SELF']);
             }else{
-                echo "<script>alert('Du måste logga in!');</script>"; 
+                $message = 'aaaaaaaaaaaaaaaa';
+                echo '<script type="text/javascript">alert("$message");</script>';
             }
             
             ?>
