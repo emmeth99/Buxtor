@@ -22,7 +22,7 @@
 
         <br>
         <br>
-
+        <div class="tabell">
         <table style="width:100%">
             <tr>
                 <th></th>
@@ -45,7 +45,7 @@
                 <tr>
                     <td>  <img src="<?php echo $row["Bild"] ?>" class="produktBild"> </td>
 
-                    <td> <a href=" <?php echo "info_produkt.php?artikelnr=".$row['ArtikelNr'] ?> "> <?php echo $row["ArtikelNamn"] ?> </a> </td>
+                    <td> <p style="font-size:30px"><a href=" <?php echo "info_produkt.php?artikelnr=".$row['ArtikelNr'] ?> "> <?php echo $row["ArtikelNamn"] ?> </a></p> </td>
                     
                     <td> <?php echo $row["Författare"] ?> </td>
                     <td> <?php echo $row["Pris"] ?> kr </td>
@@ -61,6 +61,7 @@
 
                 
         </table>
+        </div>
     </div>
 
 

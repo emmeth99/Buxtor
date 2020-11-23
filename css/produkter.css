@@ -30,6 +30,8 @@ body {
 th {
     text-align: left;
   }
-td {
-    text-align: left;
+.tabell {
+    height: 70%;
+    width: 100%;
+    padding-top: 8%;
 }
