@@ -28,7 +28,7 @@
                 <th></th>
                 <p style="font-size:30px"><th>Titel</th>
                 <th>Författare</th>
-                <th>Pris</th></a>
+                <th>Pris</th></p>
                 
             </tr>
             
