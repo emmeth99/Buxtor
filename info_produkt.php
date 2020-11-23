@@ -19,21 +19,40 @@
 <?php 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
-    include "connectDB.php";
-    $antal = $_POST["antal"];
-    $kaka = $_COOKIE["user"];
-    echo "antal: ".$antal;
+    if(isset($_COOKIE['user'])){
 
-    $sql = "SELECT Antal FROM Varukorg WHERE (ArtikelNr = '$artikel' AND KundNr = '$kaka')";
-    $result = $conn->query($sql);
-    if($row = $result->fetch_assoc()){
-        $sql = "UPDATE Varukorg SET Antal = ('$row["Antal"]' + '$antal')";
+        include "connectDB.php";
+        $antal = $_POST["antal"];
+        $kaka = $_COOKIE["user"];
+        $artikel = $_POST["artikel"];
+        echo "antal: ".$antal;
+        echo "kaka:".$kaka;
+        echo "artikel".$artikel;
+     
+        $sql = "SELECT Antal FROM Varukorg WHERE (ArtikelNr = '$artikel' AND KundNr = '$kaka')";
         $result = $conn->query($sql);
+        
+        
+        if($row = $result->fetch_assoc()){
+            $plus = $row["Antal"] + $antal;
+            echo "finns redan";
+            $sql = "UPDATE Varukorg SET Antal = '$plus'";
+            $result = $conn->query($sql);
+        }else{
+            echo "finns ej";
+            echo "artikelnr: ".$artikel;
+            
+            $sql = "INSERT INTO Varukorg(KundNr, ArtikelNr, Antal) 
+            VALUES ('$kaka','$artikel','$antal')";
+            $result = $conn->query($sql);
+        }
+
+        $conn->close();
     }else{
-        $sql = "INSERT INTO Varukorg(KundNr, ArtikelNr, Antal) 
-        VALUES ('$kaka','$artikel','$antal')";
-        $result = $conn->query($sql);
+        echo "Du måste logga in först!";
     }
+
+ 
 
     
 }
@@ -78,9 +97,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <img src="<?php echo $row["Bild"] ?>" class="produktBild">
             <h2> <?php echo $row['Pris'] ?> kr </h2>
             
-            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])?>">
                 <label for="antal">Antal:</label>
                 <input type="number" id="antal" name="antal" value= "1">
+                <input type ="hidden" id="artikel" name="artikel" value= "<?php echo $artikel ?>">
                 <input type="submit" value="KÖP"><br><br>
             </form>
 
