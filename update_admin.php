@@ -10,13 +10,16 @@
 
 <?php 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $article = test_input($_POST["article"]);
-    }
+    $article = $_POST["article"];
+}
+
 
 if(isset($article)){
-    $sql = "SELECT * FROM Vara Where 'ArtkelNr' = '$article'";
-            $result = $conn->query($sql);
-            $row = $result->fetch_assoc();
+    include "connectDB.php";
+    $sql = "SELECT * FROM Vara Where ArtikelNr = '$article'";
+    $result = $conn->query($sql);
+   $row = $result->fetch_assoc();
+   $conn->close();
 }
 ?>
     
