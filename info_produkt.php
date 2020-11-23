@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             
             <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                 <label for="pris">Antal:</label>
-                <input type="number" id="antal" name="antal" size="4" value= "1">
+                <input type="number" id="antal" name="antal" value= "1">
                 <input type="submit" value="KÖP"><br><br>
             </form>
 

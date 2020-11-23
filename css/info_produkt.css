@@ -41,3 +41,7 @@ body {
     width: 200px;
 }
 
+input[type=number]{
+    width: 35px;
+} 
+
