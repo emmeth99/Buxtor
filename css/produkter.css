@@ -27,3 +27,6 @@ body {
 .td{
     max-width: 3%;
 }
+th {
+    text-align: left;
+  }
