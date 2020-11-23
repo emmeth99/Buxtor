@@ -20,8 +20,11 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     include "connectDB.php";
-    $sql = "INSERT INTO `Varukorg`(`Förnamn`, `Efternamn`, `Email`, `Rank`, `Lösenord`) 
-    VALUES ('$fname','$lname','$email','kund','$pwd')";
+
+    $sql = "SELECT ";
+
+    //$sql = "INSERT INTO `Varukorg`(`Förnamn`, `Efternamn`, `Email`, `Rank`, `Lösenord`) 
+    //VALUES ('$fname','$lname','$email','kund','$pwd')";
 }
 
 
@@ -55,6 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <div class="text">
             <h1> <?php echo $row['ArtikelNamn'] ?> </h1>
+            <p> <?php echo $row['Beskrivning'] ?> </p>
 
         </div>
 

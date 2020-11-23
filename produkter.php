@@ -29,7 +29,7 @@
                 <th>Titel</th>
                 <th>Författare</th>
                 <th>Pris</th>
-                <th>Beskrivning</th>
+                
             </tr>
             
             
@@ -49,7 +49,7 @@
                     
                     <td> <?php echo $row["Författare"] ?> </td>
                     <td> <?php echo $row["Pris"] ?> kr </td>
-                    <td> <?php echo $row["Beskrivning"] ?> </td>
+                    
 
                 </tr>
 

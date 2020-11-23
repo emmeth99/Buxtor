@@ -23,3 +23,7 @@ body {
     height: 100px;
     width: 70px;
 }
+
+.td{
+    max-width: 3%;
+}
