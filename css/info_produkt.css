@@ -17,6 +17,27 @@ body {
     height: 500px;
     width: 70%;
     background-color: #c1ea17;
+    display: flex;
+    flex-direction: row;
     margin: auto;
     text-align: center;
 }
+
+.text{
+    background-color: lightcoral;
+    flex-grow: 7;
+    height: 100%;
+}
+
+.bild{
+    background-color: lightskyblue;
+    height: 500px;
+    flex-grow: 3;
+
+}
+
+.produktBild{
+    height: 300px;
+    width: 200px;
+}
+

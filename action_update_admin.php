@@ -28,5 +28,5 @@ if ($conn->query($sql) == TRUE) {
 $conn->close();
 
 
-header("Location: http://92.32.39.21:8080/minsida_admin.php");
+
 ?>
