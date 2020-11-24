@@ -50,11 +50,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $conn->close();
         header("Location: http://92.32.39.21:8080/kassa.php");
     }else{
-        $artikel = 
+        $artikel = $_POST["artikel"];
         myalert();
     }
 
- 
 
     
 }
