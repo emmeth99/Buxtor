@@ -1,0 +1,21 @@
+
+body {
+    background-color: #00d4f0;
+    
+}
+
+
+.container{
+    background-color: #dc0942;
+    height: 100%;
+    width: 100%;
+}
+
+.kund{
+    height: 500px;
+    width: 70%;
+    margin: auto;
+    padding-top: 4%;
+    text-align: center;
+    background-color: #c1ea17;
+}

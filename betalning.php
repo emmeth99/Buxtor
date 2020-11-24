@@ -11,7 +11,7 @@
     
     <?php include "navbar.php" ?>
 
-    
+
     <div class="container">
 
         <div class="bild">
@@ -19,7 +19,7 @@
                 <h2>Betalning</h2>
 
                 <form action="/action_page.php">
-                    <label for="fname">Adress:</label>
+                    <label for="fname">Address:</label>
                     <input type="text" id="fname" name="fname">
                     <label for="lname">Postnr & Ort:</label>
                     <input type="text" id="lname" name="lname"><br>
@@ -27,7 +27,7 @@
                     <input type="text" id="fname" name="fname">
                     <label for="lname">CVC/CVV:</label>
                     <input type="text" id="lname" name="lname"><br>
-                    <input type="submit" value="Skapa användare">
+                    <input type="submit" value="Betala">
                 </form> 
 
                 <p>Genom att genomföra köpet godkänner du att du ger oss pengar och får troligtvis inget tillbaka.</p>
