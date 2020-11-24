@@ -27,6 +27,7 @@
                 <th>ArtikelNamn</th>
                 <th>Pris/styck</th>
                 <th>Antal</th>
+                <th></th>
             </tr>
             
             <?php
@@ -46,7 +47,10 @@
             <tr>
                 <td> <?php echo $row2['ArtikelNamn'] ?> </td>
                 <td> <?php echo $row2['Pris'] ?> </td>
-                <td> <input type="number" id="antal" name="antal" min="1" value="<?php echo $row['Antal'] ?>"> </td>
+                <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                    <td> <input type="number" id="antal" name="antal" min="1" value="<?php echo $row['Antal'] ?>"> </td>
+                    <td> <input type="submit" value="OK"> </td>
+                </form>
             </tr>
             <?php 
             }

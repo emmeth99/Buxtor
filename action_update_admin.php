@@ -16,7 +16,7 @@ $pris = $_POST['pris'];
 $genre = $_POST['genre'];
 $author = $_POST['author'];
 $besk = $_POST['besk'];
-echo "nr:".$article;
+
 
 $sql = "UPDATE `Vara` SET `ArtikelNamn`='$name',`Pris`='$pris',`Genre`='$genre',`Författare`='$author',`Beskrivning`='$besk' WHERE `ArtikelNr`='$article'";
 
