@@ -19,7 +19,7 @@
 <?php 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
-    if(isset($_COOKIE['user'])){
+    if(isset($_COOKIE['user']) && $_SESSION['rank'] == 'kund'){
 
         include "connectDB.php";
         $antal = $_POST["antal"];
@@ -50,7 +50,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $conn->close();
         header("Location: http://92.32.39.21:8080/kassa.php");
     }else{
-        echo "Du måste logga in först!";
+        $artikel = 
+        myalert();
     }
 
  
@@ -98,18 +99,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <img src="<?php echo $row["Bild"] ?>" class="produktBild">
             <h2> <?php echo $row['Pris'] ?> kr </h2>
             
-            <form method="post" action="
-            
-            <?php if(isset($_COOKIE) && $_SESSION['rank'] == 'kund'){
-                echo htmlspecialchars($_SERVER['PHP_SELF']);
-            }else{
-                $message = 'aaaaaaaaaaaaaaaa';
-                echo '<script type="text/javascript">alert("$message");</script>';
-            }
-            
-            ?>
-            
-            ">
+            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                 <label for="antal">Antal:</label>
                 <input type="number" id="antal" name="antal" value= "1">
                 <input type ="hidden" id="artikel" name="artikel" value= "<?php echo $artikel ?>">
@@ -127,5 +117,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 </body>
 
+
+<script> 
+    function myalert() { 
+        alert("Welcome to GeeksforGeeks.\n " + 
+            "It is the best portal for computer" +  
+                        "science enthusiasts!"); 
+    } 
+</script> 
 
 </html>
