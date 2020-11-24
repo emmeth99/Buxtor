@@ -1,0 +1,26 @@
+
+body {
+    background-color: #00d4f0;
+    
+}
+
+
+.container{
+    background-color: #dc0942;
+    height: 100%;
+    width: 100%;
+}
+
+.delete {
+    height: 70%;
+    width: 100%;
+    padding-top: 8%;
+}
+
+.bild{
+    height: 500px;
+    width: 70%;
+    background-color: #c1ea17;
+    margin: auto;
+    text-align: center;
+}
