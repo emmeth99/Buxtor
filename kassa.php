@@ -7,7 +7,7 @@
 <html>
 <head>
 <title>Buxtor</title>
-<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/kassa.css">
 
 </head>
 <body>
