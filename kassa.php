@@ -24,7 +24,8 @@
 
         <table>
             <tr>
-                <th>ArtikelNr</th>
+                <th>ArtikelNamn</th>
+                <th>Pris/styck</th>
                 <th>Antal</th>
             </tr>
             
@@ -35,10 +36,17 @@
             $sql = "SELECT * FROM Varukorg WHERE KundNr = '$kaka'";
             $result = $conn->query($sql);
 
-            while($row = $result->fetch_assoc()) { ?>
+            while($row = $result->fetch_assoc()) { 
+                $artikel = $row["ArtikelNr"];
+                $sql2 = "SELECT * FROM Vara WHERE ArtikelNr = '$artikel'";
+                $result2 = $conn->query($sql2);
+                $row2 = $result2->fetch_assoc();
+                ?>
+                
             <tr>
-                <td> <?php echo $row['ArtikelNr'] ?> </td>
-                <td> <?php echo $row['Antal'] ?> </td>
+                <td> <?php echo $row2['ArtikelNamn'] ?> </td>
+                <td> <?php echo $row2['Pris'] ?> </td>
+                <td> <input type="number" id="antal" name="antal" min="1" value="<?php echo $row['Antal'] ?>"> </td>
             </tr>
             <?php 
             }
