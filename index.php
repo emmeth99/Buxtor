@@ -19,12 +19,10 @@
     
     <div class="container">
 
-    <div class="bild">
-        
-    </div>
+        <div class="bild">
+            
+        </div>
 
-
-        
     </div>
 
 </body>

@@ -25,9 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $antal = $_POST["antal"];
         $kaka = $_COOKIE["user"];
         $artikel = $_POST["artikel"];
-        echo "antal: ".$antal;
-        echo "kaka:".$kaka;
-        echo "artikel".$artikel;
+
      
         $sql = "SELECT Antal FROM Varukorg WHERE (ArtikelNr = '$artikel' AND KundNr = '$kaka')";
         $result = $conn->query($sql);
@@ -35,13 +33,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         if($row = $result->fetch_assoc()){
             $plus = $row["Antal"] + $antal;
-            echo "finns redan";
             $sql = "UPDATE Varukorg SET Antal = '$plus' WHERE (ArtikelNr = '$artikel' AND KundNr = '$kaka')";
             $result = $conn->query($sql);
-        }else{
-            echo "finns ej";
-            echo "artikelnr: ".$artikel;
-            
+        }else{       
             $sql = "INSERT INTO Varukorg(KundNr, ArtikelNr, Antal) 
             VALUES ('$kaka','$artikel','$antal')";
             $result = $conn->query($sql);
