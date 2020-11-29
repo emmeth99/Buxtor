@@ -36,7 +36,8 @@ input[type=number]{
 
 .kommentarer{
     width: 100%;
-    min-width: 500px;;
+    min-width: 500px;
+    max-width: 80%;
     float: left;
     text-align: left;
     padding-left: 10%;
