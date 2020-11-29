@@ -111,12 +111,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </body>
 
 
-<script> 
-    function myalert() { 
-        alert("Welcome to GeeksforGeeks.\n " + 
-            "It is the best portal for computer" +  
-                        "science enthusiasts!"); 
-    } 
-</script> 
+
 
 </html>
