@@ -42,14 +42,14 @@ title:link {
     background-color: transparent;
     text-decoration: none;}
 
-body {
-    background-color: #00d4f0;
+    body {
+        background-color: #00d4f0;
+        
+    }
     
-}
-
-
-.container{
-    background-color: #dc0942;
-    height: 100%;
-    width: 100%;
-}
+    
+    .container{
+        background-color: #dc0942;
+        height: 100%;
+        width: 100%;
+    }
