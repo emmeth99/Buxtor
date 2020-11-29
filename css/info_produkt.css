@@ -1,33 +1,28 @@
 
 
 .info{
-    height: 500px;
+    height: 1000;
     width: 70%;
     background-color: #c1ea17;
-    display: flex;
-    flex-direction: row;
     margin: auto;
     text-align: center;
+    overflow:hidden;
 }
 
 .text{
-   
-    flex-grow: 6;
     height: 100%;
     margin-top: 5%;
     max-width: 60%;
     min-width: 60%;
-    padding-left: 2%;
-    padding-right: 2%;
+    float: left;
 }
 
 .bild{
-    
-    height: 500px;
-    flex-grow: 4;
+    height: auto;
     margin-top: 5%;
     max-width: 40%;
     min-width: 40%;
+    float: left;
 }
 
 .produktBild{
@@ -39,11 +34,10 @@ input[type=number]{
     width: 35px;
 } 
 
-
 .kommentarer{
-    height: 100%;
-    margin-top: 5%;
     width: 100%;
-    padding-left: 2%;
-    padding-right: 2%;
+    min-width: 500px;;
+    float: left;
+    text-align: left;
+    padding-left: 10%;
 }   
