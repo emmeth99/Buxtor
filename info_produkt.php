@@ -85,7 +85,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <h1> <?php echo $row['ArtikelNamn'] ?> </h1>
             <p> <?php echo $row['Beskrivning'] ?> </p>
 
-            <?php
+           
+        </div>
+
+
+        <div class="bild">
+            <img src="<?php echo $row["Bild"] ?>" class="produktBild">
+            <h2> <?php echo $row['Pris'] ?> kr </h2>
+            
+            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                <label for="antal">Antal:</label>
+                <input type="number" id="antal" name="antal" value= "1" min="1">
+                <input type ="hidden" id="artikel" name="artikel" value= "<?php echo $artikel ?>">
+                <input type="submit" value="KÖP"><br><br>
+            </form>
+
+        </div>
+    <div class="kommentarer">
+         <?php
             include "connectDB.php";
 
             //$artikel = $_GET['artikelnr'];
@@ -106,30 +123,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <?php
             $conn->close();
             ?>
-        </div>
-
-
-        <div class="bild">
-            <img src="<?php echo $row["Bild"] ?>" class="produktBild">
-            <h2> <?php echo $row['Pris'] ?> kr </h2>
-            
-            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-                <label for="antal">Antal:</label>
-                <input type="number" id="antal" name="antal" value= "1" min="1">
-                <input type ="hidden" id="artikel" name="artikel" value= "<?php echo $artikel ?>">
-                <input type="submit" value="KÖP"><br><br>
-            </form>
-
-        </div>
         
-
-
+    </div>
+        
 
     </div>
 
-
-        
     </div>
+
+   
 
 </body>
 
