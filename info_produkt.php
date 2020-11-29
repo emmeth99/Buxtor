@@ -96,9 +96,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             
                 <p style="font-size:30px">Kommentarer:</p><br><br>
 
-                <?php while($row = $result->fetch_assoc()) { ?>
-                <p style="font-size:20px"><?php echo $row['KundNr'] ?></p><br>
-                <p><?php echo $row['Kommentaren'] ?></p><br><br>
+                <?php while($crow = $result->fetch_assoc()) { ?>
+                <p style="font-size:20px"><?php echo $crow['KundNr'] ?></p><br>
+                <p><?php echo $crow['Kommentaren'] ?></p><br><br>
                 <?php
                 }
                 ?>
