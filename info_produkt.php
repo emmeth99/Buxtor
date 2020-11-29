@@ -94,7 +94,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             ?> 
             
-            <div class="besk">
                 <p style="font-size:30px">Kommentarer:</p><br><br>
 
                 <?php while($row = $result->fetch_assoc()) { ?>
@@ -103,7 +102,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <?php
                 }
                 ?>
-            </div>
         
             <?php
             $conn->close();
