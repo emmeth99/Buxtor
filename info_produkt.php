@@ -88,7 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <?php
             include "connectDB.php";
 
-            $artikel = $_GET['artikelnr'];
+            //$artikel = $_GET['artikelnr'];
             $sql = "SELECT * FROM Kommentar WHERE ArtikelNr = '$artikel'";
             $result = $conn->query($sql);
 
