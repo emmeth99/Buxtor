@@ -21,6 +21,7 @@
 
             <div class="admin">
                 <h1> Välkommen boss! </h1>
+                <a href="article_list_admin.php"> Artiklar </a>   <br>
                 <a href="add_admin.php"> Lägg till varor </a>   <br>
                 <a href="update_admin.php"> Redigera varor</a>   <br> 
                 <a href="delete_admin.php"> Ödelägga varor</a>   <br><br>
