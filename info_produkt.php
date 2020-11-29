@@ -112,11 +112,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             ?> 
             
-                <p style="font-size:30px">Kommentarer:</p><br><br>
+                <p style="font-size:30px">Kommentarer:</p><br>
 
                 <?php while($crow = $result->fetch_assoc()) { ?>
-                <p style="font-size:20px"><?php echo $crow['KundNr'] ?></p><br>
-                <p><?php echo $crow['Kommentaren'] ?></p><br><br>
+                <p style="font-size:20px"><?php echo $crow['KundNr'] ?></p>
+                <p><?php echo $crow['Kommentaren'] ?></p><br>
                 <?php
                 }
                 ?>
