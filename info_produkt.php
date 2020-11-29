@@ -114,10 +114,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             
                 <p style="font-size:30px">Kommentarer:</p><br>
 
-                <?php while($crow = $result->fetch_assoc()) { ?>
-                <p style="font-size:20px"><?php echo $crow['KundNr'] ?></p>
-                <p><?php echo $crow['Kommentaren'] ?></p><br>
-                <?php
+                <?php while($crow = $result->fetch_assoc()) { 
+                    $kundnr = $crow['KundNr'];
+                    $sql = "SELECT * FROM Konto Where KundNr = $kundnr";
+                    $resultat = $conn->quary($sql);
+                    $grow = $resultat->fetch_assoc();
+                    ?>
+                    <p style="font-size:20px"><?php echo $grow['Förnamn'] echo $grow['Efternamn'] ?></p>
+                    <p><?php echo $crow['Kommentaren'] ?></p><br>
+                    <?php
                 }
                 ?>
         
