@@ -11,16 +11,21 @@
 }
 
 .text{
-    background-color: lightcoral;
+   
     flex-grow: 7;
     height: 100%;
+    margin-top: 5%;
+    max-width: 70%;
+    padding-left: 2%;
+    padding-right: 2%;
 }
 
 .bild{
-    background-color: lightskyblue;
+    
     height: 500px;
     flex-grow: 3;
-
+    margin-top: 5%;
+    max-width: 30%;
 }
 
 .produktBild{

@@ -20,4 +20,10 @@ input[type=number]{
 table{
     margin-left: auto;
   margin-right: auto;
+  padding-top: 5%;
+}
+
+.thTop{
+    font-size: 20px;
+    padding: 10px;
 }

@@ -21,9 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $kaka = $_COOKIE['user'];
     $artikel = $_POST['artikelnr'];
     $antal = $_POST['antal'];
-    echo "kund:".$kaka;
-    echo " id:".$artikel;
-    echo " antal:".$antal;
+
 
     if($antal == 0){
         $sql = "DELETE FROM Varukorg WHERE ArtikelNr = '$artikel' AND KundNr = '$kaka'";
@@ -32,11 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $conn->query($sql);
-    if ($conn->query($sql) == TRUE) {
-        echo "New record created successfully";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
+    
     $conn->close();
 }
 
@@ -50,99 +44,117 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     
     <div class="container">
-
-
-    <table style="width:70%">
-
-    <th> Varukorg</th>
-    <th>Summa</th>
-
-    <tr>
-        <td>  
-
-        <table>
-                <tr>
-                    <th>Artikel</th>
-                    <th>Pris/styck</th>
-                    <th>Antal</th>
-                    <th></th>
-                </tr>
+        <div class="kassa">
+            <?php
+            if($_SESSION['rank'] == "kund"){
                 
-                <?php
-                
-
                 include "connectDB.php";
-                $kaka = $_COOKIE["user"];
+                $kaka = $_COOKIE['user'];
                 $sql = "SELECT * FROM Varukorg WHERE KundNr = '$kaka'";
                 $result = $conn->query($sql);
-                
-                $summa = 0;
 
-                while($row = $result->fetch_assoc()) { 
-                    $artikel = $row["ArtikelNr"];
-                    $sql2 = "SELECT * FROM Vara WHERE ArtikelNr = '$artikel'";
-                    $result2 = $conn->query($sql2);
-                    $row2 = $result2->fetch_assoc();
-                    $summa = $summa + ($row2['Pris'] * $row['Antal']);
-
+                if($result->fetch_assoc()){
                     ?>
+                    <table style="width:50%">
+
+                    <th class="thTop"> Varukorg</th>
+                    <th class="thTop">Summa</th>
+
+                    <tr>
+                        <td>  
+
+                        <table>
+                                <tr>
+                                    <th>Artikel</th>
+                                    <th>Pris/styck</th>
+                                    <th>Antal</th>
+                                    <th></th>
+                                </tr>
+                                
+                                <?php
+                                
+
+                                include "connectDB.php";
+                                $kaka = $_COOKIE["user"];
+                                $sql = "SELECT * FROM Varukorg WHERE KundNr = '$kaka'";
+                                $result = $conn->query($sql);
+                                
+                                $summa = 0;
+
+                                while($row = $result->fetch_assoc()) { 
+                                    $artikel = $row["ArtikelNr"];
+                                    $sql2 = "SELECT * FROM Vara WHERE ArtikelNr = '$artikel'";
+                                    $result2 = $conn->query($sql2);
+                                    $row2 = $result2->fetch_assoc();
+                                    $summa = $summa + ($row2['Pris'] * $row['Antal']);
+
+                                    ?>
+                                    
+                                <tr>
+                                    <td> <?php echo $row2['ArtikelNamn'] ?> </td>
+                                    <td> <?php echo $row2['Pris'] ?> </td>
+                                    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                                        <input type="hidden" id="artikelnr" name="artikelnr" value="<?php echo $artikel ?>"> 
+                                        <td> <input type="number" id="antal" name="antal" min="0" value="<?php echo $row['Antal'] ?>"> </td>
+                                        <td> <input type="submit" value="OK"> </td>
+                                    </form>
+                                </tr>
+                                
+                                <?php 
+                                
+                                }
+                                $conn->close();
+
+                                
+                                ?>
+                            </table>
+
+                        </td>
+
+                        <td>  
+                            <?php 
+                                $frakt = 29; 
+                                $totalt = $summa+$frakt;
+                            ?>
+                        <table>
+                                    <th> </th>
+                                    <th> </th>
+
+                                    <tr>
+                                        <td> Varor: &nbsp </td>
+                                        <td> <?php echo $summa ?> kr</td> 
+                                    </tr>
+
+                                    <tr>
+                                        <td> Frakt: &nbsp </td>
+                                        <td> <?php echo $frakt ?> kr </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td> Totalt: &nbsp </td>
+                                        <td> <?php  echo $totalt?> kr </td>
+                                    </tr>
+                                </table>
+                                
+                        </td>
+                    </tr>
+
+                    </table>
                     
-                <tr>
-                    <td> <?php echo $row2['ArtikelNamn'] ?> </td>
-                    <td> <?php echo $row2['Pris'] ?> </td>
-                    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-                        <input type="hidden" id="artikelnr" name="artikelnr" value="<?php echo $artikel ?>"> 
-                        <td> <input type="number" id="antal" name="antal" min="0" value="<?php echo $row['Antal'] ?>"> </td>
-                        <td> <input type="submit" value="OK"> </td>
-                    </form>
-                </tr>
-                
-                <?php 
-                
+                <?php
+                }else{
+                    echo "Du har inte köpt något än";
                 }
-                $conn->close();
-
                 
-                ?>
-            </table>
+            }else{
+                echo "Logga in först";
+            }
+            $conn->close();
 
-        </td>
-
-        <td>  
-            <?php 
-                $frakt = 29; 
-                $totalt = $summa+$frakt;
             ?>
-        <table>
-                    <th> </th>
-                    <th> </th>
-
-                    <tr>
-                        <td> Varor: &nbsp </td>
-                        <td> <?php echo $summa ?> kr</td> 
-                    </tr>
-
-                    <tr>
-                        <td> Frakt: &nbsp </td>
-                        <td> <?php echo $frakt ?> kr </td>
-                    </tr>
-
-                    <tr>
-                        <td> Totalt: &nbsp </td>
-                        <td> <?php  echo $totalt?> kr </td>
-                    </tr>
-                </table>
-                <a href="betalning.php">Vidare till betalning</a>
-        </td>
-    </tr>
-
-    </table>
-
-
-
-
-
-
+            <br> <br>
+            <a href="betalning.php">Vidare till betalning</a>
+        </div>
     </div>
 
    
