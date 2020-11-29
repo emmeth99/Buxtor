@@ -7,7 +7,7 @@
     margin: auto;
     text-align: center;
     
-    display: flex;
+    
 }
 
 
@@ -15,22 +15,7 @@ input[type=number]{
     width: 35px;
 } 
 
-.varukorg{
-    background-color: lightcoral;
-    flex-grow: 5;
-    height: 100%;
-    width: 50%;
-    
-}
 
-.summa{
-    background-color: lightskyblue;
-    height: 500px;
-    flex-grow: 5;
-    width: 50%;
-
-
-}
 
 table{
     margin-left: auto;
