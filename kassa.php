@@ -51,11 +51,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     <div class="container">
 
-    <div class="kassa">
-        <div class="varukorg">
-            <h2> Varukorg </h2>
 
-            <table>
+    <table style="width:70%">
+
+    <th> Varukorg</th>
+    <th>Summa</th>
+
+    <tr>
+        <td>  
+
+        <table>
                 <tr>
                     <th>Artikel</th>
                     <th>Pris/styck</th>
@@ -100,16 +105,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 
                 ?>
             </table>
-        </div>
 
-        <div class="summa">
-                <?php 
-                    $frakt = 29; 
-                    $totalt = $summa+$frakt;
-                ?>
+        </td>
 
-                <h2> Summa </h2>
-                <table style="background-color: #ddd;">
+        <td>  
+            <?php 
+                $frakt = 29; 
+                $totalt = $summa+$frakt;
+            ?>
+        <table>
                     <th> </th>
                     <th> </th>
 
@@ -123,23 +127,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <td> <?php echo $frakt ?> kr </td>
                     </tr>
 
-                    <tr style="background-color: #eee;">
+                    <tr>
                         <td> Totalt: &nbsp </td>
                         <td> <?php  echo $totalt?> kr </td>
                     </tr>
                 </table>
-                <br>
-
                 <a href="betalning.php">Vidare till betalning</a>
+        </td>
+    </tr>
 
-        </div>
+    </table>
+
+
+
+
 
 
     </div>
 
-
-        
-    </div>
+   
 
 </body>
 
