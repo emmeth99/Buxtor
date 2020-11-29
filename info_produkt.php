@@ -102,6 +102,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         
 
+        <?php
+        include "connectDB.php";
+
+        $artikel = $_GET['artikelnr'];
+
+        $sql = "SELECT * FROM Kommentar WHERE ArtikelNr = '$artikel'";
+
+        $result = $conn->query($sql);
+
+        ?> 
+            
+        <div class="besk">
+            <p style="font-size:30px">Kommentarer:</p><br><br>
+
+            <?php while($row = $result->fetch_assoc()) { ?>
+            <p style="font-size:20px"><?php echo $row['KundNr'] ?></p><br>
+            <p><?php echo $row['Kommentaren'] ?></p><br><br>
+            }
+        </div>
+        
+        <?php
+        $conn->close();
+        ?>
+
     </div>
 
 

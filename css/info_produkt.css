@@ -37,3 +37,12 @@ input[type=number]{
     width: 35px;
 } 
 
+
+.besk{
+    flex-grow: 7;
+    height: 100%;
+    margin-top: 5%;
+    max-width: 70%;
+    padding-left: 2%;
+    padding-right: 2%;
+}   
