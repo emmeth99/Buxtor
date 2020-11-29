@@ -119,7 +119,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <?php while($row = $result->fetch_assoc()) { ?>
             <p style="font-size:20px"><?php echo $row['KundNr'] ?></p><br>
             <p><?php echo $row['Kommentaren'] ?></p><br><br>
+            <?php
             }
+            ?>
         </div>
         
         <?php
