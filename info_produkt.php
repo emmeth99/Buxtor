@@ -120,7 +120,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $resultat = $conn->quary($sql);
                     $grow = $resultat->fetch_assoc();
                     ?>
-                    <p style="font-size:20px"><?php echo $grow['Förnamn'] echo $grow['Efternamn'] ?></p>
+                    <p style="font-size:20px"><?php echo $grow['Förnamn'].$grow['Efternamn'] ?></p>
                     <p><?php echo $crow['Kommentaren'] ?></p><br>
                     <?php
                 }
