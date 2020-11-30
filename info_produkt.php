@@ -83,6 +83,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <div class="text">
             <h1> <?php echo $row['ArtikelNamn'] ?> </h1>
+            <h4> <?php echo $row['Författare'] ?> </h4> <br>
             <p> <?php echo $row['Beskrivning'] ?> </p>
 
            
@@ -91,6 +92,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <div class="bild">
             <img src="<?php echo $row["Bild"] ?>" class="produktBild">
+            <p> Betyg: <?php //echo $row['Betyg'] 
+                $betyg = $row['Betyg'];
+                while($betyg > 0){
+                    echo "&#9733";
+                    $betyg = $betyg-1;
+                }
+                $betyg = $row['Betyg'];
+                while($betyg < 5){
+                    echo "&#9734";
+                    $betyg = $betyg+1;
+                }
+            
+            
+            ?> &nbsp Lagersaldo: <?php echo "34" ?> </p>
             <h2> <?php echo $row['Pris'] ?> kr </h2>
             
             <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
@@ -117,10 +132,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <?php while($crow = $result->fetch_assoc()) { 
                     $kundnr = $crow['KundNr'];
                     $sql = "SELECT * FROM Konto Where KundNr = $kundnr";
-                    $resultat = $conn->quary($sql);
+                    $resultat = $conn->query($sql);
                     $grow = $resultat->fetch_assoc();
                     ?>
-                    <p style="font-size:20px"><?php echo $grow['Förnamn'].$grow['Efternamn'] ?></p>
+                    <p style="font-size:20px"><?php 
+                        echo $grow['Förnamn']." ".$grow['Efternamn']." &nbsp &nbsp ";  
+                        $betyg = $crow['Betyg'];
+                        while($betyg > 0){
+                            echo "&#9733";
+                            $betyg = $betyg-1;
+                        }
+                        $betyg = $crow['Betyg'];
+                        while($betyg < 5){
+                            echo "&#9734";
+                            $betyg = $betyg+1;
+                        }
+                        ?>
+                     </p>
+
                     <p><?php echo $crow['Kommentaren'] ?></p><br>
                     <?php
                 }
