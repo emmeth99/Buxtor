@@ -68,7 +68,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php
             include "connectDB.php";
 
-            $artikel = $_GET['artikelnr'];
+            if(!isset($artikel)){
+                $artikel = $_GET['artikelnr'];
+            }
+            
 
             $sql = "SELECT * FROM Vara WHERE ArtikelNr = '$artikel'";
 
@@ -108,7 +111,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             
             ?> &nbsp Lagersaldo: <?php echo $row['Lagersaldo'] ?> </p>
             <h2> <?php echo $row['Pris'] ?> kr </h2>
-            
+
             <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                 <label for="antal">Antal:</label>
                 <input type="number" id="antal" name="antal" value= "1" min="1">
