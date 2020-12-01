@@ -16,10 +16,10 @@
 
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="produkter.php">Kategorier</a>
+                <a class="nav-link" href="kategorier.php">Kategorier</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="produkter.php">Författare</a>
+                <a class="nav-link" href="författare.php">Författare</a>
             </li>
             <li class="nav-item2">
                 <a class="nav-link" href="kassa.php">Kassa</a>
