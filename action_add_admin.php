@@ -15,10 +15,11 @@ $pris = $_POST['pris'];
 $genre = $_POST['genre'];
 $author = $_POST['author'];
 $besk = $_POST['besk'];
+$saldo = $_POST['saldo'];
 
 
-$sql = "INSERT INTO `Vara`(`ArtikelNamn`, `Pris`, `Genre`, `Författare`, `Beskrivning`) 
-VALUES ('$name','$pris','$genre','$author','$besk')";
+$sql = "INSERT INTO `Vara`(`ArtikelNamn`, `Pris`, `Genre`, `Författare`, `Beskrivning`, `Lagersaldo`) 
+VALUES ('$name','$pris','$genre','$author','$besk', '$saldo')";
 
 if ($conn->query($sql) == TRUE) {
     echo "New record created successfully";

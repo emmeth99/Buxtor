@@ -53,6 +53,8 @@ if(isset($article)){
                 <input type="number" id="pris" name="pris" value= <?php echo $row["Pris"] ?>><br>
                 <label for="author">Författare:</label><br>
                 <input type="text" id="author" name="author" value= '<?php echo $row["Författare"] ?>'><br>
+                <label for="saldo">Lagersaldo:</label><br>
+                <input type="number" id="saldo" name="saldo" value= '<?php echo $row["Lagersaldo"] ?>'><br>
                 <label for="besk">Beskrivning:</label><br>
                 <input type="text" name="besk" id="besk" size="69" value= '<?php echo $row["Beskrivning"] ?>'><br><br>
   

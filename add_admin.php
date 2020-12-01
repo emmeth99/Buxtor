@@ -29,6 +29,8 @@
                 <input type="number" id="pris" name="pris" required><br>
                 <label for="author">Författare:</label><br>
                 <input type="text" id="author" name="author" required><br>
+                <label for="saldo">Lagersaldo:</label><br>
+                <input type="number" id="saldo" name="saldo" min="0"required><br>
                 <label for="besk">Beskrivning:</label><br>
                 <input type="text" id="besk" name="besk" required><br><br>
   
