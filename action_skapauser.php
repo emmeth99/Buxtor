@@ -22,7 +22,9 @@ VALUES ('$fname','$lname','$email','kund','$pwd')";
 if ($conn->query($sql) == TRUE) {
     echo "New record created successfully";
 } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    $message = "E-postadressen upptagen.";
+    echo "<script type='text/javascript'>alert('$message');</script>";
+    //echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
 $conn->close();
