@@ -12,14 +12,39 @@
     
     <?php include "navbar.php" ?>
 
-    
+    <?php
+
+    include "connectDB.php";
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST"){
+        $fname = $_POST['fname'];
+        $lname = $_POST['lname'];
+        $email = $_POST['email'];
+        $pwd = $_POST['pwd'];
+
+
+        $sql = "INSERT INTO `Konto`(`Förnamn`, `Efternamn`, `Email`, `Rank`, `Lösenord`) 
+        VALUES ('$fname','$lname','$email','kund','$pwd')";
+
+        if ($conn->query($sql) == TRUE) {
+            header("Location: http://92.32.39.21:8080/login.php");
+            //echo "New record created successfully";
+        } else {
+            $message = "E-postadressen upptagen.";
+            echo "<script type='text/javascript'>alert('$message');</script>";
+            //echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+    }
+    $conn->close();
+    ?>
+
     <div class="container">
 
     <div class="bild">
         <div class="skapa">
             <h2>Skapa användare</h2>
 
-            <form action="/action_skapauser.php" method="post">
+            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                 <label for="fname">Förnamn:</label>
                 <input type="text" id="fname" name="fname" required>
                 <label for="lname">Efternamn:</label>
