@@ -105,7 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 }
             
             
-            ?> &nbsp Lagersaldo: <?php echo "Lagersaldo" ?> </p>
+            ?> &nbsp Lagersaldo: <?php echo ['Lagersaldo'] ?> </p>
             <h2> <?php echo $row['Pris'] ?> kr </h2>
             
             <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
