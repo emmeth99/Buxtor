@@ -5,12 +5,12 @@ a:link {
 }
 
 
-li {
+.nav-item {
     
     display: inline-block;
 }
 
-li a {
+.nav-link {
     display: block;
     color: #dc0942;
     background-color: tan;
@@ -21,11 +21,11 @@ li a {
     margin-right: 50px;
 }
 
-li a:hover {
+.nav-link:hover {
     background-color: #191927
 }
 
-ul {
+.navbar-nav {
     background-color: #fbb10b;
     margin: auto;
     overflow: hidden;
@@ -33,6 +33,7 @@ ul {
 
 .nav-item2 {
     float: right;
+    display: inline-block;
 }
 
 .nav-item {

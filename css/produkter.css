@@ -29,17 +29,38 @@ td {
     text-align: left;
 }
 
-ul {
+
+.nav2-ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-  }
-  
-  li a {
-    display: block;
-    width: 60px;
-    background-color: #dddddd;
-  }
+    width: 100%;
+    padding-top: 10%;
+    background-color: #c1ea17;
+}
 
+.nav2-li{
+    height: 50px;
+}
   
+.nav2-lia {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.nav2-lia:hover{
+    background-color: #78920f;
+  color: white;
+}
+
+
+.nav2{
+    width: 15%;
+    float: left;
+    text-align: center;
+}
+
+
   

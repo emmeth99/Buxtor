@@ -19,11 +19,12 @@
 
 
     <div class="nav2">
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#news">News</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#about">About</a></li>
+        <ul class="nav2-ul">
+            <li class="nav2-li"> <a class="nav2-lia" href="#home">Deckare</a> </li>
+            <li class="nav2-li"> <a class="nav2-lia" href="#news">Fakta</a></li>
+            <li class="nav2-li"> <a class="nav2-lia" href="#contact">Fantasy</a></li>
+            <li class="nav2-li"> <a class="nav2-lia" href="#about">Humor</a></li>
+            <li class="nav2-li"> <a class="nav2-lia" href="#about">Romantik</a></li>
         </ul>
     
     </div>
