@@ -12,17 +12,20 @@
 .text{
     height: 100%;
     margin-top: 5%;
-    max-width: 60%;
-    min-width: 60%;
+    max-width: 56%;
+    width: 56%;
     float: left;
+    padding-left: 4%;
+
 }
 
 .bild{
     height: auto;
     margin-top: 5%;
-    max-width: 40%;
-    min-width: 40%;
+    max-width: 38%;
+    width: 38%;
     float: left;
+    padding-right: 2%;
 }
 
 .produktBild{
