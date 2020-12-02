@@ -16,7 +16,7 @@
 
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="kategorier.php">Kategorier</a>
+                <a class="nav-link" href="genrer.php">Genrer</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="författare.php">Författare</a>

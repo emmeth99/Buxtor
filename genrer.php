@@ -20,7 +20,7 @@
 
     <div class="nav2">
         <ul class="nav2-ul">
-            <li class="nav2-li"> <a class="nav2-lia" href="#home">Deckare</a> </li>
+            <li class="nav2-li"> <a class="nav2-lia" href="kategorier.php?genre=">Deckare</a> </li>
             <li class="nav2-li"> <a class="nav2-lia" href="#news">Fakta</a></li>
             <li class="nav2-li"> <a class="nav2-lia" href="#contact">Fantasy</a></li>
             <li class="nav2-li"> <a class="nav2-lia" href="#about">Humor</a></li>
