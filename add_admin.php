@@ -13,16 +13,100 @@
     
     <?php include "header.php" ?>
     
-
     <?php include "navbar.php" ?>
-    
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        
+include "connectDB.php";
+
+$name = $_POST['name'];
+$pris = $_POST['pris'];
+$genre = $_POST['genre'];
+$author = $_POST['author'];
+$besk = $_POST['besk'];
+$saldo = $_POST['saldo'];
+
+
+$sql = "INSERT INTO `Vara`(`ArtikelNamn`, `Pris`, `Genre`, `Författare`, `Beskrivning`, `Lagersaldo`) 
+VALUES ('$name','$pris','$genre','$author','$besk', '$saldo')";
+
+if ($conn->query($sql) == TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+$sql = "SELECT ArtikelNr FROM Vara WHERE ArtikelNamn = '$name'";
+$result = $conn->query($sql);
+$row = $result->fetch_assoc();
+$ArtikelNr = $row['ArtikelNr'];
+$bildURL = "images/" . $ArtikelNr . ".jpg";
+
+$sql = "UPDATE Vara SET Bild = '$bildURL' WHERE ArtikelNr = '$ArtikelNr'";
+//Ta EJ bort nedanstående rad, den är livsviktig
+$conn->query($sql);
+
+
+$conn->close();
+
+$target_dir = "images/";
+$target_file = $bildURL;
+$uploadOk = 1;
+$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+// Check if image file is a actual image or fake image
+if(isset($_POST["submit"])) {
+  $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+  if($check !== false) {
+    echo "File is an image - " . $check["mime"] . ".";
+    $uploadOk = 1;
+  } else {
+    $message = "Filen är inte en bild.";
+    echo "<script type='text/javascript'>alert('$message');</script>";
+    $uploadOk = 0;
+  }
+}
+
+// Check file size
+if ($_FILES["fileToUpload"]["size"] > 500000) {
+  $message = "Bilden är för stor.";
+  echo "<script type='text/javascript'>alert('$message');</script>";
+  $uploadOk = 0;
+}
+
+// Allow certain file formats
+if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+&& $imageFileType != "gif" ) {
+  $message = "Endast JPG, JPEG, PNG & GIF filer är tillåtna.";
+  echo "<script type='text/javascript'>alert('$message');</script>";
+  $uploadOk = 0;
+}
+
+// Check if $uploadOk is set to 0 by an error
+if ($uploadOk == 0) {
+  echo "Sorry, your file was not uploaded.";
+// if everything is ok, try to upload file
+} else {
+  if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+    echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+    header("Location: http://92.32.39.21:8080/minsida_admin.php");
+  } else {
+    $message = "Ett error uppstod när din fil skulle laddas upp.";
+    echo "<script type='text/javascript'>alert('$message');</script>";
+    //echo " error: ".$_FILES['fileToUpload']['error'];
+  }
+}
+
+?>
+    }    
+    ?>
     <div class="container">
 
     <div class="bild">
         <div class="skapa">
             <h2>Lägg till vara</h2>
 
-            <form action="action_add_admin.php" method="post" enctype="multipart/form-data">
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" enctype="multipart/form-data">
                 <label for="name">Artikelnamn:</label><br>
                 <input type="text" id="name" name="name" required><br>
                 <label for="pris">Pris:</label><br>
