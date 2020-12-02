@@ -20,11 +20,11 @@
 
     <div class="nav2">
         <ul class="nav2-ul">
-            <li class="nav2-li"> <a class="nav2-lia" href="kategorier.php?genre=">Deckare</a> </li>
-            <li class="nav2-li"> <a class="nav2-lia" href="#news">Fakta</a></li>
-            <li class="nav2-li"> <a class="nav2-lia" href="#contact">Fantasy</a></li>
-            <li class="nav2-li"> <a class="nav2-lia" href="#about">Humor</a></li>
-            <li class="nav2-li"> <a class="nav2-lia" href="#about">Romantik</a></li>
+            <li class="nav2-li"> <a class="nav2-lia" href="genrer.php?genre=deckare">Deckare</a> </li>
+            <li class="nav2-li"> <a class="nav2-lia" href="genrer.php?genre=fakta">Fakta</a></li>
+            <li class="nav2-li"> <a class="nav2-lia" href="genrer.php?genre=fantasy">Fantasy</a></li>
+            <li class="nav2-li"> <a class="nav2-lia" href="genrer.php?genre=humor">Humor</a></li>
+            <li class="nav2-li"> <a class="nav2-lia" href="genrer.php?genre=romantik">Romantik</a></li>
         </ul>
     
     </div>
@@ -47,24 +47,49 @@
             <?php
             include "connectDB.php";
 
-            $sql = "SELECT * FROM Vara";
-            $result = $conn->query($sql);
 
-            
-            while($row = $result->fetch_assoc()) { ?>
+            if(isset($_GET['genre'])){
+                $genre = $_GET['genre'];
 
-                <tr>
-                    <td>  <img src="<?php echo $row["Bild"] ?>" class="produktBild"> </td>
+                $sql = "SELECT * FROM Vara WHERE Genre = '$genre'";
+                $result = $conn->query($sql);
 
-                    <td> <p style="font-size:20px"><a href=" <?php echo "info_produkt.php?artikelnr=".$row['ArtikelNr'] ?> "> <?php echo $row["ArtikelNamn"] ?> </a></p> </td>
-                    
-                    <td> <?php echo $row["Författare"] ?> </td>
-                    <td> <?php echo $row["Pris"] ?> kr </td>
-                    
+                while($row = $result->fetch_assoc()) { ?>
 
-                </tr>
+                    <tr>
+                        <td>  <img src="<?php echo $row["Bild"] ?>" class="produktBild"> </td>
 
-            <?php 
+                        <td> <p style="font-size:20px"><a href=" <?php echo "info_produkt.php?artikelnr=".$row['ArtikelNr'] ?> "> <?php echo $row["ArtikelNamn"] ?> </a></p> </td>
+                        
+                        <td> <?php echo $row["Författare"] ?> </td>
+                        <td> <?php echo $row["Pris"] ?> kr </td>
+                        
+
+                    </tr>
+
+                <?php 
+                }
+            }else{
+
+                $sql = "SELECT * FROM Vara";
+                $result = $conn->query($sql);
+
+                
+                while($row = $result->fetch_assoc()) { ?>
+
+                    <tr>
+                        <td>  <img src="<?php echo $row["Bild"] ?>" class="produktBild"> </td>
+
+                        <td> <p style="font-size:20px"><a href=" <?php echo "info_produkt.php?artikelnr=".$row['ArtikelNr'] ?> "> <?php echo $row["ArtikelNamn"] ?> </a></p> </td>
+                        
+                        <td> <?php echo $row["Författare"] ?> </td>
+                        <td> <?php echo $row["Pris"] ?> kr </td>
+                        
+
+                    </tr>
+
+                <?php 
+                }
             }
             $conn->close();
         ?>
