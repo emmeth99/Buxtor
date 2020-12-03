@@ -28,7 +28,7 @@ $saldo = $_POST['saldo'];
 $sql = "INSERT INTO `Vara`(`ArtikelNamn`, `Pris`, `Genre`, `Författare`, `Beskrivning`, `Lagersaldo`) 
 VALUES ('$name','$pris','$genre','$author','$besk', '$saldo')";
 
-$conn->query($sql)
+$conn->query($sql);
 //if ($conn->query($sql) == TRUE) {
     //echo "New record created successfully";
 //} else {
