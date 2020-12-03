@@ -27,25 +27,18 @@
         $saldo = $_POST['saldo'];
 
 
-        $sql = "INSERT INTO `Vara`(`ArtikelNamn`, `Pris`, `Genre`, `Författare`, `Beskrivning`, `Lagersaldo`) 
-        VALUES ('$name','$pris','$genre','$author','$besk', '$saldo')";
-
         //$conn->query($sql);
-        if ($conn->query($sql) === TRUE) {
-            echo "New record created successfully";
-        } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
-        }
+        //if ($conn->query($sql) === TRUE) {
+            //echo "New record created successfully";
+        //} else {
+            //echo "Error: " . $sql . "<br>" . $conn->error;
+        //}
 
         $sql = "SELECT ArtikelNr FROM Vara WHERE ArtikelNamn = '$name'";
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();
         $ArtikelNr = $row['ArtikelNr'];
         $bildURL = "images/" . $ArtikelNr . ".jpg";
-
-        $sql = "UPDATE Vara SET Bild = '$bildURL' WHERE ArtikelNr = '$ArtikelNr'";
-        //Ta EJ bort nedanstående rad, den är livsviktig
-        $conn->query($sql);
 
 
         $conn->close();
@@ -93,7 +86,11 @@
         // if everything is ok, try to upload file
         if($uploadOk != 0) {
             if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-                echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+                $sql = "INSERT INTO `Vara`(`ArtikelNamn`, `Pris`, `Genre`, `Författare`, `Beskrivning`, `Lagersaldo`) 
+                VALUES ('$name','$pris','$genre','$author','$besk', '$saldo')";
+                $sql = "UPDATE Vara SET Bild = '$bildURL' WHERE ArtikelNr = '$ArtikelNr'";
+                $conn->query($sql);
+                //echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
                 echo "den går iiin";
                 //header("Location: http://92.32.39.21:8080/minsida_admin.php");
             //} else {
