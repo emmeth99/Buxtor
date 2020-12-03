@@ -28,7 +28,7 @@
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();
 
-        if ($row['Förnamn'] === $old) {
+        if ($row['Lösenord'] == $old) {
             $sql = "UPDATE 'Konto' Set 'Lösenord' = '$new' Where 'KundNr'= '$kaka'";
             $conn->query($sql);
             $message = "Lösenordet har ändrats!";
