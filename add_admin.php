@@ -41,7 +41,7 @@
         $bildURL = "images/" . $ArtikelNr . ".jpg";
 
 
-        $conn->close();
+        
 
         $target_dir = "images/";
         $target_file = $bildURL;
@@ -89,9 +89,11 @@
                 $sql = "INSERT INTO `Vara`(`ArtikelNamn`, `Pris`, `Genre`, `Författare`, `Beskrivning`, `Lagersaldo`) 
                 VALUES ('$name','$pris','$genre','$author','$besk', '$saldo')";
                 $conn->query($sql);
+                echo " URL:".$bildURL;
+                Echo " NR:".$ArtikelNr;
                 $sql = "UPDATE Vara SET Bild = '$bildURL' WHERE ArtikelNr = '$ArtikelNr'";
                 $conn->query($sql);
-                //echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+                echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
                 echo "den går iiin";
                 //header("Location: http://92.32.39.21:8080/minsida_admin.php");
             //} else {
@@ -101,7 +103,9 @@
             //}
         }
         } 
+        $conn->close();
     }   
+    
     ?>
     <div class="container">
 
