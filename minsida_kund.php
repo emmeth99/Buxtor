@@ -30,6 +30,7 @@
             ?>
 
             <h2> Välkommen <?php echo $row['Förnamn'] ?>! </h2>
+            <a href="password.php"> Ändra lösenordet </a>   <br>
             <form method="post" action="logout.php">
                     <button type="submit">Logga ut</button>
             </form>
