@@ -10,6 +10,11 @@
 
 include "connectDB.php";
 
+$sql = "SELECT ArtikelNr FROM Vara ORDER BY ArtikelNr DESC";
+$result = $conn->query($sql);
+$ArtikelNr = $result->fetch_assoc() + 1;
+
+
 $name = $_POST['name'];
 $pris = $_POST['pris'];
 $genre = $_POST['genre'];
@@ -27,10 +32,6 @@ if ($conn->query($sql) == TRUE) {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
-$sql = "SELECT ArtikelNr FROM Vara WHERE ArtikelNamn = '$name'";
-$result = $conn->query($sql);
-$row = $result->fetch_assoc();
-$ArtikelNr = $row['ArtikelNr'];
 $bildURL = "images/" . $ArtikelNr . ".jpg";
 
 $sql = "UPDATE Vara SET Bild = '$bildURL' WHERE ArtikelNr = '$ArtikelNr'";
