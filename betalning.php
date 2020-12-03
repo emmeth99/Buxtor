@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <meta charset="UTF-8">
 <html>
@@ -18,15 +21,22 @@
             <div class="betalning">
                 <h2>Betalning</h2>
 
-                <form action="/action_page.php">
+                <form action="beställning.php" method="POST"> 
                     <label for="fname">Address:</label>
-                    <input type="text" id="fname" name="fname">
-                    <label for="lname">Postnr & Ort:</label>
-                    <input type="text" id="lname" name="lname"><br>
+                    <input type="text" id="address" name="address" required> <br> <br>
+
+                    <label for="lname">Postort:</label>
+                    <input type="text" id="postort" name="postort" required>
+
+                    <label for="lname">Postnr:</label>
+                    <input type="number" id="postnr" name="postnr" required><br><br>
+
                     <label for="fname">Kortnr:</label>
-                    <input type="text" id="fname" name="fname">
+                    <input type="number" id="kortnr" name="kortnr" required>
+
                     <label for="lname">CVC/CVV:</label>
-                    <input type="text" id="lname" name="lname"><br>
+                    <input type="number" id="cvc" name="cvc" required><br> <br>
+
                     <input type="submit" value="Betala">
                 </form> 
 
