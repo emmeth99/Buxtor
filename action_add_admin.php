@@ -68,14 +68,18 @@ if (file_exists($target_file)) {
 
 // Check file size
 if ($_FILES["fileToUpload"]["size"] > 5000000) {
-  echo "Sorry, your file is too large.";
+  //echo "Sorry, your file is too large.";
+  $message = "Filen är för stor!";
+  echo "<script type='text/javascript'>alert('$message');window.location.href = 'add_admin.php';</script>";
   $uploadOk = 0;
 }
 
 // Allow certain file formats
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
 && $imageFileType != "gif" ) {
-  echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+  //echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+  $message = "Endast JPG, JPEG, PNG & GIF filer!";
+  echo "<script type='text/javascript'>alert('$message');window.location.href = 'add_admin.php';</script>";
   $uploadOk = 0;
 }
 
@@ -85,12 +89,14 @@ if ($uploadOk == 0) {
 // if everything is ok, try to upload file
 } else {
   if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-    echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+    //echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+    $message = "Varan har lagts till!";
+    echo "<script type='text/javascript'>alert('$message');window.location.href = 'minsida_admin.php';</script>";
   } else {
     echo "Sorry, there was an error uploading your file.";
     echo " error: ".$_FILES['fileToUpload']['error'];
   }
 }
 
-header("Location: http://92.32.39.21:8080/minsida_admin.php");
+//header("Location: http://92.32.39.21:8080/minsida_admin.php");
 ?>
