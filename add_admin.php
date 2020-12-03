@@ -57,7 +57,7 @@
 
         // Check if image file is a actual image or fake image
         echo "den går in12";
-        if(isset($_POST["submit"])) {
+        //if(isset($_POST["submit"])) {
             echo "den går in13";
             $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
             if($check !== false) {
@@ -69,7 +69,7 @@
                 echo "<script type='text/javascript'>alert('$message');</script>";
                 $uploadOk = 0;
             }
-        }
+        //}
 
         // Check file size
         if ($_FILES["fileToUpload"]["size"] > 500000) {
