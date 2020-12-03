@@ -14,7 +14,7 @@
     <?php include "header.php" ?>
     
     <?php include "navbar.php" ?>
-    <?php
+    <?php/*
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         include "connectDB.php";
@@ -105,7 +105,7 @@
         } 
         $conn->close();
     }   
-    
+    */
     ?>
     <div class="container">
 
@@ -113,7 +113,7 @@
         <div class="skapa">
             <h2>Lägg till vara</h2>
 
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" enctype="multipart/form-data">
+            <form action="action_add_admin.php" method="post" enctype="multipart/form-data">
                 <label for="name">Artikelnamn:</label><br>
                 <input type="text" id="name" name="name" required><br>
                 <label for="pris">Pris:</label><br>
