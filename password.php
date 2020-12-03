@@ -24,7 +24,7 @@
         $new = $_POST['new'];
 
         $kaka = $_COOKIE['user'];
-        $sql = "SELECT Förnamn FROM Konto WHERE KundNr = '$kaka'";
+        $sql = "SELECT 'Lösenord' FROM Konto WHERE KundNr = '$kaka'";
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();
 
