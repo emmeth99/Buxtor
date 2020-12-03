@@ -60,6 +60,7 @@
             $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
             if($check !== false) {
                 echo "File is an image - " . $check["mime"] . ".";
+                echo "den går iin";
                 $uploadOk = 1;
             } else {
                 $message = "Filen är inte en bild.";
@@ -70,6 +71,7 @@
 
         // Check file size
         if ($_FILES["fileToUpload"]["size"] > 500000) {
+            echo "den går in";
             $message = "Bilden är för stor.";
             echo "<script type='text/javascript'>alert('$message');</script>";
             $uploadOk = 0;
@@ -90,6 +92,7 @@
         if($uploadOk != 0) {
             if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
                 echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+                echo "den går iiin";
                 header("Location: http://92.32.39.21:8080/minsida_admin.php");
             //} else {
                 //$message = "Ett error uppstod när din fil skulle laddas upp.";
