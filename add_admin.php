@@ -87,7 +87,7 @@
         //if ($uploadOk == 0) {
         //echo "Sorry, your file was not uploaded.";
         // if everything is ok, try to upload file
-        } if($uploadOk != 0) {
+        if($uploadOk != 0) {
             if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
                 echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
                 header("Location: http://92.32.39.21:8080/minsida_admin.php");
