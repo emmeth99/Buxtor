@@ -1,7 +1,8 @@
 
 
 .bild{
-    height: inherit;
+    height: auto;
+    min-height: 500px;
     width: 70%;
     background-color: #c1ea17;
     margin: auto;
