@@ -93,7 +93,7 @@
             if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
                 echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
                 echo "den går iiin";
-                header("Location: http://92.32.39.21:8080/minsida_admin.php");
+                //header("Location: http://92.32.39.21:8080/minsida_admin.php");
             //} else {
                 //$message = "Ett error uppstod när din fil skulle laddas upp.";
                 //echo "<script type='text/javascript'>alert('$message');</script>";
