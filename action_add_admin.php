@@ -89,9 +89,9 @@ if ($uploadOk == 0) {
 // if everything is ok, try to upload file
 } else {
   if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-    echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
-    //$message = "Varan har lagts till!";
-    //echo "<script type='text/javascript'>alert('$message');window.location.href = 'minsida_admin.php';</script>";
+    //echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+    $message = "Varan har lagts till!";
+    echo "<script type='text/javascript'>alert('$message');window.location.href = 'minsida_admin.php';</script>";
   } else {
     echo "Sorry, there was an error uploading your file.";
     echo " error: ".$_FILES['fileToUpload']['error'];
