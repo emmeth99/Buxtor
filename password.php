@@ -30,6 +30,7 @@
 
         if ($row['Förnamn'] === $old) {
             $sql = "UPDATE 'Konto' Set 'Lösenord' = $new Where 'KundNr'= $kaka";
+            $conn->query($sql);
             $message = "Lösenordet har ändrats!";
             echo "<script type='text/javascript'>alert('$message');window.location.href = "minsida_kund.php";</script>";
             //header("Location: http://92.32.39.21:8080/login.php");
