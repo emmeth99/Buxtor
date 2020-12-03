@@ -29,7 +29,7 @@
         $row = $result->fetch_assoc();
 
         if ($row['Lösenord'] == $old) {
-            $sql = "UPDATE 'Konto' Set 'Lösenord' = '$new' Where 'KundNr'= '$kaka'";
+            $sql = "UPDATE `Konto` SET `Lösenord`= $new WHERE `KundNr`= $kaka";
             $conn->query($sql);
             $message = "Lösenordet har ändrats!";
             echo "<script type='text/javascript'>alert('$message');window.location.href = 'minsida_kund.php';</script>";
