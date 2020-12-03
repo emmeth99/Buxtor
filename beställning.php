@@ -42,15 +42,34 @@ if ($conn->query($sql) == TRUE) {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
+            $sql = "SELECT OrderNr FROM Beställning ORDER BY OrderNr DESC";
+            $result = $conn->query($sql);
+            $row = $result->fetch_assoc();
+            $ordernr = $row['OrderNr'];
+
 
             $sql = "SELECT * FROM Varukorg WHERE KundNr = $kaka";
             $result = $conn->query($sql);
 
             while($row = $result->fetch_assoc()){
                 $artikel = $row['ArtikelNr'];
-                $sql = "SELECT Pris FROM Vara WHERE ArtikelNr = '$artikel'";
+                $antal = $row['Antal'];
+
+                $sql = "SELECT Pris FROM Vara WHERE ArtikelNr = $artikel";
                 $result2 = $conn->query($sql);
                 $row2 = $result2->fetch_assoc();
+
+                $pris = $row2['Pris'];
+
+                $sql = "INSERT INTO `BeställningVara`(`OrderNr`, `ArtikelNr`, `Antal`, `Pris`) 
+                VALUES ('$ordernr', '$artikel', '$antal', '$pris')";
+
+                if ($conn->query($sql) == TRUE) {
+                    echo "New record created successfully";
+                } else {
+                    echo "Error: " . $sql . "<br>" . $conn->error;
+                }
+                                
                 
             }
 
