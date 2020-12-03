@@ -18,6 +18,7 @@
     <div class="container">
 
         <div class="bild">
+            
             <?php 
             
             include "connectDB.php";
@@ -29,58 +30,78 @@
             $summa = $_POST['summa'];
             $date = date('Y/m/d');
 
-            echo $adress. $postort.$postnr.$kaka.$summa;
 
             $sql = "INSERT INTO `Beställning`(`KundNr`, `Datum`, `Summa`, `Adress`, `Postort`, `Postnummer`) 
             VALUES($kaka, '$date', $summa, '$adress', '$postort', $postnr)";
 
+            
+            $conn->query($sql);
+            
 
-
-if ($conn->query($sql) == TRUE) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
 
             $sql = "SELECT OrderNr FROM Beställning ORDER BY OrderNr DESC";
             $result = $conn->query($sql);
             $row = $result->fetch_assoc();
             $ordernr = $row['OrderNr'];
 
-
-            $sql = "SELECT * FROM Varukorg WHERE KundNr = $kaka";
-            $result = $conn->query($sql);
-
-            while($row = $result->fetch_assoc()){
-                $artikel = $row['ArtikelNr'];
-                $antal = $row['Antal'];
-
-                $sql = "SELECT Pris FROM Vara WHERE ArtikelNr = $artikel";
-                $result2 = $conn->query($sql);
-                $row2 = $result2->fetch_assoc();
-
-                $pris = $row2['Pris'];
-
-                $sql = "INSERT INTO `BeställningVara`(`OrderNr`, `ArtikelNr`, `Antal`, `Pris`) 
-                VALUES ('$ordernr', '$artikel', '$antal', '$pris')";
-
-                if ($conn->query($sql) == TRUE) {
-                    echo "New record created successfully";
-                } else {
-                    echo "Error: " . $sql . "<br>" . $conn->error;
-                }
-                                
-                
-            }
-
-
-            
-            
-            
-            
-            $conn->close();
-            
             ?>
+            <h1> Tack för din beställning! </h1>
+            <h4> Orderdetaljer:  </h4>
+            <p>Ordernummer: <?php echo $ordernr ?> </p>
+            <p>Datum: <?php echo $date ?> </p>
+            <p>Summa: <?php echo $summa ?>kr </p>
+            <p>Adress: <?php echo $adress ?> </p>
+            <p>Postnr: <?php echo $postnr." ".$postort ?> </p>
+
+
+
+            <table>
+                <th> Artikel </th>
+                <th> Pris </th>
+                <th> Antal </th>
+                <?php
+
+
+                $sql = "SELECT * FROM Varukorg WHERE KundNr = $kaka";
+                $result = $conn->query($sql);
+
+                while($row = $result->fetch_assoc()){
+                    $artikel = $row['ArtikelNr'];
+                    $antal = $row['Antal'];
+
+                    $sql = "SELECT * FROM Vara WHERE ArtikelNr = $artikel";
+                    $result2 = $conn->query($sql);
+                    $row2 = $result2->fetch_assoc();
+
+                    $pris = $row2['Pris'];
+
+                    $sql = "INSERT INTO `BeställningVara`(`OrderNr`, `ArtikelNr`, `Antal`, `Pris`) 
+                    VALUES ('$ordernr', '$artikel', '$antal', '$pris')";
+                    $conn->query($sql);
+
+                    ?>
+                        <tr> 
+                            <td> <?php echo $row2['ArtikelNamn']?> </td>
+                            <td> <?php echo $row2['Pris']?> </td>
+                            <td> <?php echo $row['Antal']?> </td>
+                        </tr>
+
+                    <?php    
+
+                    $sql = "DELETE FROM Varukorg WHERE KundNr = '$kaka'";
+                    $conn->query($sql);
+
+                }
+
+
+                
+                
+                
+                
+                $conn->close();
+                
+                ?>
+            </table>
 
         </div>
 
