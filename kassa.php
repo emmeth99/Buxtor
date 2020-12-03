@@ -153,7 +153,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             ?>
             <br> <br>
-            <a href="betalning.php">Vidare till betalning</a>
+            <form action="betalning.php" method="post">
+                <input type="hidden" id="summa" name="summa" value="<?php echo $totalt ?>">
+                <input type="submit" value="Vidare till betalning">
+            </form>
+            
         </div>
     </div>
 

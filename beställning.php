@@ -22,32 +22,40 @@
             
             include "connectDB.php";
 
-            $address = $_POST['address'];
+            $adress = $_POST['adress'];
             $postort = $_POST['postort'];
             $postnr = $_POST['postnr'];
             $kaka = $_COOKIE['user'];
-            $summa = 0;
+            $summa = $_POST['summa'];
+            $date = date('Y/m/d');
 
-            echo $address.$postort.$postnr.$kaka." ";
-            
+            echo $adress. $postort.$postnr.$kaka.$summa;
+
+            $sql = "INSERT INTO `Beställning`(`KundNr`, `Datum`, `Summa`, `Adress`, `Postort`, `Postnummer`) 
+            VALUES($kaka, '$date', $summa, '$adress', '$postort', $postnr)";
+
+
+
+if ($conn->query($sql) == TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
 
             $sql = "SELECT * FROM Varukorg WHERE KundNr = $kaka";
             $result = $conn->query($sql);
 
             while($row = $result->fetch_assoc()){
-                echo "summa:".$summa;
                 $artikel = $row['ArtikelNr'];
                 $sql = "SELECT Pris FROM Vara WHERE ArtikelNr = '$artikel'";
                 $result2 = $conn->query($sql);
                 $row2 = $result2->fetch_assoc();
-                $summa = $summa + ($row2['Pris'] * $row['Antal']);
+                
             }
 
 
-            $sql = "INSERT INTO Beställning(KundNr, Datum, Summa, 'Address', Postort, Postnr)
-            VALUES($kaka, date('Y/m/d'), $summa, $address, $postort, $postnr)";
-            $result = $conn->query($sql);
-
+            
             
             
             

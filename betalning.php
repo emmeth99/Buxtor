@@ -12,7 +12,10 @@
     
     <?php include "header.php" ?>
     
-    <?php include "navbar.php" ?>
+    <?php include "navbar.php"; 
+    
+    $summa = $_POST['summa'];
+    ?>
 
 
     <div class="container">
@@ -22,8 +25,8 @@
                 <h2>Betalning</h2>
 
                 <form action="beställning.php" method="POST"> 
-                    <label for="fname">Address:</label>
-                    <input type="text" id="address" name="address" required> <br> <br>
+                    <label for="fname">Adress:</label>
+                    <input type="text" id="adress" name="adress" required> <br> <br>
 
                     <label for="lname">Postort:</label>
                     <input type="text" id="postort" name="postort" required>
@@ -37,6 +40,7 @@
                     <label for="lname">CVC/CVV:</label>
                     <input type="number" id="cvc" name="cvc" required><br> <br>
 
+                    <input type="hidden" id="summa" name="summa" value="<?php echo $summa ?>">
                     <input type="submit" value="Betala">
                 </form> 
 
