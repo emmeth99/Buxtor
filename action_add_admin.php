@@ -9,11 +9,13 @@
 
 
 include "connectDB.php";
-
+echo "aaaa";
 $sql = "SELECT ArtikelNr FROM Vara ORDER BY ArtikelNr DESC";
 $result = $conn->query($sql);
-$ArtikelNr = $result->fetch_assoc() + 1;
+$row = $result->fetch_assoc();
+$ArtikelNr = $row['ArtikelNr'] + 1;
 
+echo $ArtikelNr;
 
 $name = $_POST['name'];
 $pris = $_POST['pris'];

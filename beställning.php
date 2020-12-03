@@ -27,12 +27,15 @@
             $postnr = $_POST['postnr'];
             $kaka = $_COOKIE['user'];
             $summa = 0;
+
+            echo $address.$postort.$postnr.$kaka." ";
             
 
             $sql = "SELECT * FROM Varukorg WHERE KundNr = $kaka";
             $result = $conn->query($sql);
 
             while($row = $result->fetch_assoc()){
+                echo "summa:".$summa;
                 $artikel = $row['ArtikelNr'];
                 $sql = "SELECT Pris FROM Vara WHERE ArtikelNr = '$artikel'";
                 $result2 = $conn->query($sql);
@@ -43,8 +46,8 @@
 
             $sql = "INSERT INTO Beställning(KundNr, Datum, Summa, 'Address', Postort, Postnr)
             VALUES($kaka, date('Y/m/d'), $summa, $address, $postort, $postnr)";
+            $result = $conn->query($sql);
 
-            
             
             
             
