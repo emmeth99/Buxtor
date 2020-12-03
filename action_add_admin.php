@@ -43,6 +43,8 @@ $conn->query($sql);
 
 $conn->close();
 
+echo $target_dir . basename($_FILES["fileToUpload"]["name"]);
+
 $target_dir = "images/";
 $target_file = $bildURL;
 $uploadOk = 1;
