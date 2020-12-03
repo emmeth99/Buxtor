@@ -43,7 +43,7 @@ $conn->query($sql);
 
 $conn->close();
 
-echo basename($_FILES["fileToUpload"]);
+$target_file1 = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 
 $target_dir = "images/";
 $target_file = $bildURL;
@@ -77,8 +77,8 @@ if ($_FILES["fileToUpload"]["size"] > 500000) {
 }
 
 // Allow certain file formats
-if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-&& $imageFileType != "gif" ) {
+if($target_file1 != "jpg" && $target_file1 != "png" && $target_file1 != "jpeg"
+&& $target_file1 != "gif" ) {
   //echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
   $message = "Endast JPG, JPEG, PNG & GIF filer!";
   echo "<script type='text/javascript'>alert('$message');window.location.href = 'add_admin.php';</script>";
