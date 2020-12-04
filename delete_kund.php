@@ -46,7 +46,7 @@
                     header("Location: http://92.32.39.21:8080/delete_kund.php");
                     echo 4;
                 }
-                echo 5
+                echo 5;
                 document.getElementById("demo").innerHTML = txt;
             }
             </script>
