@@ -32,7 +32,8 @@
             <h2> Välkommen <?php echo $row['Förnamn'] ?>! </h2>
 
             <a href="orderhistorik.php"> Orderhistorik </a>   <br>
-            <a href="password.php"> Ändra lösenordet </a>   <br> <br>
+            <a href="password.php"> Ändra lösenordet </a>   <br> 
+            <a href="delete_kund.php"> Ta bort konto </a>   <br><br>
             
             <form method="post" action="logout.php">
                     <button type="submit">Logga ut</button>
