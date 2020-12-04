@@ -29,19 +29,25 @@
             <script>
             function myFunction() {
                 var r = confirm("Vill du verkligen eliminera ditt konto?")
-                if (r == true) {
+                echo 0;
+                if (r) {
                     <?php
                     include "connectDB.php";
+                    each 1;
                     $kaka = $_COOKIE['user'];
                     $sql = "DELETE FROM `Konto` WHERE `KundNr` = $kaka";
+                    echo 2;
                     $conn->query($sql);
                     $conn->close();
                     ?>
                     header("Location: http://92.32.39.21:8080/logout.php");
+                    echo 3;
                 } else {
                     header("Location: http://92.32.39.21:8080/delete_kund.php");
+                    echo 4;
                 }
-                //document.getElementById("demo").innerHTML = txt;
+                echo 5
+                document.getElementById("demo").innerHTML = txt;
             }
             </script>
         </div>
