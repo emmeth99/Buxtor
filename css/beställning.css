@@ -1,0 +1,28 @@
+
+.varor{
+    height: 100%;
+    margin-top: 8%;
+    max-width: 45%;
+    width: 45%;
+    float: left;
+    padding-left: 5%;
+}
+
+
+.info{
+    height: 100%;
+    margin-top: 5%;
+    max-width: 45%;
+    width: 45%;
+    float: left;
+    padding-left: 4%;
+}
+
+.bild{
+    height: auto;
+    min-height: 500px;
+    width: 70%;
+    background-color: #c1ea17;
+    margin: auto;
+    text-align: center;
+}

@@ -6,7 +6,7 @@
 <html>
 <head>
 <title>Buxtor</title>
-<link rel="stylesheet" href="css/betalning.css">
+<link rel="stylesheet" href="css/beställning.css">
 </head>
 <body>
     
@@ -17,7 +17,9 @@
 
     <div class="container">
 
-        <div class="bild">
+    <div class="bild">
+
+        <div class="info">
             
             <?php 
             
@@ -53,7 +55,9 @@
             <p>Adress: <?php echo $adress ?> </p>
             <p>Postnr: <?php echo $postnr." ".$postort ?> </p>
 
+        </div>
 
+        <div class="varor">
 
             <table>
                 <th> Artikel </th>
@@ -103,10 +107,10 @@
                 ?>
             </table>
 
-        </div>
+            </div>
 
 
-        
+    </div>  
     </div>
 
 </body>
