@@ -29,7 +29,6 @@
             <script>
             function myFunction() {
                 var r = confirm("Vill du verkligen eliminera ditt konto?")
-                echo 0;
                 if (r) {
                     <?php
                     include "connectDB.php";
