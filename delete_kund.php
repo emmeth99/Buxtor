@@ -28,8 +28,8 @@
 
             <script>
             function myFunction() {
-                var txt;
-                if (confirm("Vill du verkligen eliminera ditt konto?")) {
+                var r = confirm("Vill du verkligen eliminera ditt konto?")
+                if (r == true) {
                     <?php
                     include "connectDB.php";
                     $kaka = $_COOKIE['user'];
