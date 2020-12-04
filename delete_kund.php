@@ -41,7 +41,7 @@
                 } else {
                     header("Location: http://92.32.39.21:8080/delete_kund.php");
                 }
-                document.getElementById("demo").innerHTML = txt;
+                //document.getElementById("demo").innerHTML = txt;
             }
             </script>
         </div>
