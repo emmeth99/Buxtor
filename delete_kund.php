@@ -33,7 +33,7 @@
                 if (r) {
                     <?php
                     include "connectDB.php";
-                    each 1;
+                    echo 1;
                     $kaka = $_COOKIE['user'];
                     $sql = "DELETE FROM `Konto` WHERE `KundNr` = $kaka";
                     echo 2;
@@ -41,15 +41,16 @@
                     $conn->close();
                     ?>
                     header("Location: http://92.32.39.21:8080/logout.php");
-                    echo 3;
+                    
                 } else {
                     header("Location: http://92.32.39.21:8080/delete_kund.php");
-                    echo 4;
+                    
                 }
-                echo 5;
+                
                 document.getElementById("demo").innerHTML = txt;
             }
             </script>
+            5;
         </div>
     </div>
 </body>
