@@ -30,20 +30,14 @@
             function myFunction() {
                 var r = confirm("Vill du verkligen eliminera ditt konto?")
                 if (r) {
-                    <?php
-                    include "connectDB.php";
-                    $kaka = $_COOKIE['user'];
-                    $sql = "DELETE FROM `Konto` WHERE `KundNr` = $kaka";
-                    $conn->query($sql);
-                    $conn->close();
-                    ?>
-                    header("Location: http://92.32.39.21:8080/logout.php");
-                    
+                    window.alert("Ditt konto har blivit utplånat.");
+
+                    window.location.href = "action_delete_kund.php";
+
                 } else {
-                    header("Location: http://92.32.39.21:8080/delete_kund.php");
+                    window.location.href = "delete_kund.php";
                 }
-                
-                document.getElementById("demo").innerHTML = txt;
+                //document.getElementById("demo").innerHTML = txt;
             }
             </script>
         </div>
