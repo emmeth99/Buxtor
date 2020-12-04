@@ -8,7 +8,7 @@
 <html>
 <head>
 <title>Buxtor</title>
-<link rel="stylesheet" href="css/betalning.css">
+<link rel="stylesheet" href="css/orderhistorik.css">
 </head>
 <body>
     
