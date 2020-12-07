@@ -17,6 +17,44 @@
 
     <div class="container">
 
+    <div class="nav3">
+        <ul class="nav3-ul">
+            <li class="nav3-li"> <a class="nav3-lia" href="#A">A</a> </li>
+            <li class="nav3-li"> <a class="nav3-lia" href="#B">B</a></li>
+            <li class="nav3-li"> <a class="nav3-lia" href="#C">C</a></li>
+            <li class="nav3-li"> <a class="nav3-lia" href="#D">D</a></li>
+            <li class="nav3-li"> <a class="nav3-lia" href="#E">E</a></li>
+            <li class="nav3-li"> <a class="nav3-lia" href="#F">F</a></li>
+            <li class="nav3-li"> <a class="nav3-lia" href="#G">G</a></li>
+            <li class="nav3-li"> <a class="nav3-lia" href="#H">H</a></li>
+            <li class="nav3-li"> <a class="nav3-lia" href="#I">I</a></li>
+            <li class="nav3-li"> <a class="nav3-lia" href="#J">J</a></li>
+            <li class="nav3-li"> <a class="nav3-lia" href="#K">K</a></li>
+            <li class="nav3-li"> <a class="nav3-lia" href="#L">L</a></li>
+            <li class="nav3-li"> <a class="nav3-lia" href="#M">M</a></li>
+            <li class="nav3-li"> <a class="nav3-lia" href="#N">N</a></li>
+            <li class="nav3-li"> <a class="nav3-lia" href="#O">O</a></li>
+        </ul>
+        <ul class="nav3-ul">
+            <li class="nav3-li"> <a class="nav3-lia" href="#P">P</a></li>
+            <li class="nav3-li"> <a class="nav3-lia" href="#Q">Q</a></li>
+            <li class="nav3-li"> <a class="nav3-lia" href="#R">R</a></li>
+            <li class="nav3-li"> <a class="nav3-lia" href="#S">S</a></li>
+            <li class="nav3-li"> <a class="nav3-lia" href="#T">T</a></li>
+            <li class="nav3-li"> <a class="nav3-lia" href="#U">U</a></li>
+            <li class="nav3-li"> <a class="nav3-lia" href="#V">V</a></li>
+            <li class="nav3-li"> <a class="nav3-lia" href="#W">W</a></li>
+            <li class="nav3-li"> <a class="nav3-lia" href="#X">X</a></li>
+            <li class="nav3-li"> <a class="nav3-lia" href="#Y">Y</a></li>
+            <li class="nav3-li"> <a class="nav3-lia" href="#Z">Z</a></li>
+            <li class="nav3-li"> <a class="nav3-lia" href="#Å">Å</a></li>
+            <li class="nav3-li"> <a class="nav3-lia" href="#Ä">Ä</a></li>
+            <li class="nav3-li"> <a class="nav3-lia" href="#Ö">Ö</a></li>
+            <li class="nav3-li"> </li>
+        </ul>
+    
+    </div>
+
     <div class="bild">
     
 
@@ -35,7 +73,7 @@
             <?php
             include "connectDB.php";
 
-            $sql = "SELECT * FROM Vara";
+            $sql = "SELECT * FROM Vara ORDER BY Författare";
             $result = $conn->query($sql);
 
             

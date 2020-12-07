@@ -17,16 +17,21 @@
 
 
 <?php 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
     
     if(isset($_COOKIE['user']) && $_SESSION['rank'] == 'kund'){
 
         include "connectDB.php";
+
+        $artikel = $_POST["artikel"];
         $antal = $_POST["antal"];
         $kaka = $_COOKIE["user"];
-        $artikel = $_POST["artikel"];
+        
 
-     
+    
         $sql = "SELECT Antal FROM Varukorg WHERE (ArtikelNr = '$artikel' AND KundNr = '$kaka')";
         $result = $conn->query($sql);
         
@@ -43,6 +48,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         $conn->close();
         header("Location: http://92.32.39.21:8080/kassa.php");
+        
+
     }else{
         $artikel = $_POST["artikel"];
         $message = "Du måste logga in för att handla.";
@@ -79,8 +86,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $row = $result->fetch_assoc();
 
+            
             $conn->close();
-
 
 
         ?>
@@ -110,11 +117,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             
             
             ?> &nbsp Lagersaldo: <?php echo $row['Lagersaldo'] ?> </p>
-            <h2> <?php echo $row['Pris'] ?> kr </h2>
+            <h2> <?php echo $row['Pris']  ?> kr </h2>
 
             <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                 <label for="antal">Antal:</label>
-                <input type="number" id="antal" name="antal" value= "1" min="1">
+                <input type="number" id="antal" name="antal" value= "1" min="1" max=" <?php echo $row['Lagersaldo'] ?> ">
                 <input type ="hidden" id="artikel" name="artikel" value= "<?php echo $artikel ?>">
                 <input type="submit" value="KÖP"><br><br>
             </form>

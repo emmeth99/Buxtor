@@ -140,6 +140,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </tr>
 
                     </table>
+
+                    <br> <br>
+                <form action="betalning.php" method="post">
+                    <input type="hidden" id="summa" name="summa" value="<?php echo $totalt ?>">
+                    <input type="submit" value="Vidare till betalning">
+                </form>
                     
                 <?php
                 }else{
@@ -152,11 +158,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $conn->close();
 
             ?>
-            <br> <br>
-            <form action="betalning.php" method="post">
-                <input type="hidden" id="summa" name="summa" value="<?php echo $totalt ?>">
-                <input type="submit" value="Vidare till betalning">
-            </form>
+            
             
         </div>
     </div>

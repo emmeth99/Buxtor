@@ -64,5 +64,39 @@ td {
     
 }
 
+.nav3-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 50%;
+    padding-top: 10%;
+    background-color: #c1ea17;
+    float: left;
+}
+
+.nav3-li{
+    height: 40px;
+}
+  
+.nav3-lia {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.nav3-lia:hover{
+    background-color: #78920f;
+  color: white;
+}
+
+
+.nav3{
+    width: 15%;
+    float: left;
+    text-align: center;
+    
+}
+
 
   

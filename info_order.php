@@ -112,8 +112,13 @@
                                         echo "&#9734";
                                         $betyg = $betyg+1;
                                     }
-                                }else{
-                                    echo "<a href=gebetyg.php> Ge betyg </a>";
+                                }else{ ?>
+                                    <form method="POST" action="gebetyg.php"> 
+                                        <input type="hidden" id="artikelnr" name="artikelnr" value="<?php echo $row2['ArtikelNr'] ?>"> 
+                                        <input type="submit" value="Ge betyg">
+                                    </form>
+
+                                <?php
                                 }
                             
                             ?> </td>
