@@ -28,8 +28,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }else{
         $sql = "UPDATE Varukorg SET Antal = '$antal' WHERE ArtikelNr = '$artikel' AND KundNr = '$kaka'";
     }
-
     $conn->query($sql);
+
+
+    //$sql = "UPDATE Vara SET Lagersaldo = Lagersaldo + ";
     
     $conn->close();
 }
