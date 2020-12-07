@@ -45,6 +45,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             VALUES ('$kaka','$artikel','$antal')";
             $result = $conn->query($sql);
         }
+
+        $sql = "UPDATE Vara SET Lagersaldo = Lagersaldo - '$antal' WHERE ArtikelNr = '$artikel'";
+        $conn->query($sql);
         
         $conn->close();
         header("Location: http://92.32.39.21:8080/kassa.php");
@@ -119,9 +122,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             ?> &nbsp Lagersaldo: <?php echo $row['Lagersaldo'] ?> </p>
             <h2> <?php echo $row['Pris']  ?> kr </h2>
 
+            
             <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                 <label for="antal">Antal:</label>
-                <input type="number" id="antal" name="antal" value= "1" min="1" max=" <?php echo $row['Lagersaldo'] ?> ">
+                <input type="number" id="antal" name="antal" value= "1" min="1" max=<?php echo $row['Lagersaldo'];?> >
                 <input type ="hidden" id="artikel" name="artikel" value= "<?php echo $artikel ?>">
                 <input type="submit" value="KÖP"><br><br>
             </form>
