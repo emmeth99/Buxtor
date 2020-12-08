@@ -23,49 +23,51 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
     
     if(isset($_COOKIE['user']) && $_SESSION['rank'] == 'kund'){
-
-        $sql = "SELECT Lagersaldo FROM Vara WHERE ArtikelNr = '$artikel'";
-
-        if(){
-
-        }
-
         include "connectDB.php";
 
         $artikel = $_POST["artikel"];
         $antal = $_POST["antal"];
-        $kaka = $_COOKIE["user"];
-        
 
-    
-        $sql = "SELECT Antal FROM Varukorg WHERE (ArtikelNr = '$artikel' AND KundNr = '$kaka')";
+        $sql = "SELECT Lagersaldo FROM Vara WHERE ArtikelNr = '$artikel'";
         $result = $conn->query($sql);
-        
-        $conn->autocommit(FALSE);
-        if($row = $result->fetch_assoc()){
-            $plus = $row["Antal"] + $antal;
-            $sql = "UPDATE Varukorg SET Antal = '$plus' WHERE (ArtikelNr = '$artikel' AND KundNr = '$kaka')";
-        }else{     
-            $sql = "INSERT INTO Varukorg(KundNr, ArtikelNr, Antal) 
-            VALUES ('$kaka','$artikel','$antal')";
-        }
-        $result = $conn->query($sql);
+        $row = $result->fetch_assoc();
 
-        $sql = "UPDATE Vara SET Lagersaldo = Lagersaldo - '$antal' WHERE ArtikelNr = '$artikel'";
-        $result2 = $conn->query($sql);
+        if($row['Lagersaldo'] < $antal){
 
-        if($result && $result2){
-            $conn->commit();
-        }else{
-            $conn->rollback();
-            $message = "Något gick fel, vänligen försök igen";
-            echo "<script type='text/javascript'>alert('$message');</script>";
+            $kaka = $_COOKIE["user"];
+            
+
+        
+            $sql = "SELECT Antal FROM Varukorg WHERE (ArtikelNr = '$artikel' AND KundNr = '$kaka')";
+            $result = $conn->query($sql);
+            
+            $conn->autocommit(FALSE);
+            if($row = $result->fetch_assoc()){
+                $plus = $row["Antal"] + $antal;
+                $sql = "UPDATE Varukorg SET Antal = '$plus' WHERE (ArtikelNr = '$artikel' AND KundNr = '$kaka')";
+            }else{     
+                $sql = "INSERT INTO Varukorg(KundNr, ArtikelNr, Antal) 
+                VALUES ('$kaka','$artikel','$antal')";
+            }
+            $result = $conn->query($sql);
+
+            $sql = "UPDATE Vara SET Lagersaldo = Lagersaldo - '$antal' WHERE ArtikelNr = '$artikel'";
+            $result2 = $conn->query($sql);
+
+            if($result && $result2){
+                $conn->commit();
+            }else{
+                $conn->rollback();
+                $message = "Något gick fel, vänligen försök igen";
+                echo "<script type='text/javascript'>alert('$message');</script>";
+            }
+            $conn->autocommit(TRUE);
+            
+            $conn->close();
+            header("Location: http://92.32.39.21:8080/kassa.php");
+            }else{
+
         }
-        $conn->autocommit(TRUE);
-        
-        $conn->close();
-        header("Location: http://92.32.39.21:8080/kassa.php");
-        
 
     }else{
         $artikel = $_POST["artikel"];
