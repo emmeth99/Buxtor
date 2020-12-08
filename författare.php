@@ -52,7 +52,7 @@
             
             while($row = $result->fetch_assoc()) { 
                 $författare = $row["Författare"];
-                if ($författare[0] == "A" || $författare[0] == "B" || $författare[0] == "C" || $författare[0] == "D" || $författare[0] == "E"){?>
+                if ($författare[0] == ("A" || "a") || $författare[0] == "B" || $författare[0] == "C" || $författare[0] == "D" || $författare[0] == "E"){?>
 
                 <tr id=ABCDE>
                     
