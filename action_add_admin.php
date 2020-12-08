@@ -24,11 +24,16 @@ $besk = $_POST['besk'];
 $saldo = $_POST['saldo'];
 
 $conn->autocommit(FALSE);
-$sql = "INSERT INTO `Vara`(`ArtikelNamn`, `Pris`, `Genre`, `Författare`, `Beskrivning`, `Lagersaldo`) 
+
+$result = $sql = "INSERT INTO `Vara`(`ArtikelNamn`, `Pris`, `Genre`, `Författare`, `Beskrivning`, `Lagersaldo`) 
 VALUES ('$name','$pris','$genre','$author','$besk', '$saldo')";
 
-$result = $conn->query($sql);
-
+$conn->query($sql);
+//if ($conn->query($sql) == TRUE) {
+    //echo "New record created successfully";
+//} else {
+    //echo "Error: " . $sql . "<br>" . $conn->error;
+//}
 
 $bildURL = "images/" . $ArtikelNr . ".jpg";
 
@@ -40,11 +45,10 @@ if($result && $result2){
   $conn->commit();
 }else{
   $conn->rollback();
-  $message = "Det blev ett fel, vänligen försök igen.";
-    echo "<script type='text/javascript'>alert('$message');window.location.href = 'minsida_admin.php';</script>";
 }
 
 $conn->autocommit(TRUE);
+
 $conn->close();
 
 $target_dir = "images/";
