@@ -35,19 +35,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         $sql = "SELECT Antal FROM Varukorg WHERE (ArtikelNr = '$artikel' AND KundNr = '$kaka')";
         $result = $conn->query($sql);
         
-        
+        $conn->autocommit(FALSE);
         if($row = $result->fetch_assoc()){
             $plus = $row["Antal"] + $antal;
             $sql = "UPDATE Varukorg SET Antal = '$plus' WHERE (ArtikelNr = '$artikel' AND KundNr = '$kaka')";
-            $result = $conn->query($sql);
-        }else{       
+        }else{     
             $sql = "INSERT INTO Varukorg(KundNr, ArtikelNr, Antal) 
             VALUES ('$kaka','$artikel','$antal')";
-            $result = $conn->query($sql);
         }
+        $result = $conn->query($sql);
 
         $sql = "UPDATE Vara SET Lagersaldo = Lagersaldo - '$antal' WHERE ArtikelNr = '$artikel'";
-        $conn->query($sql);
+        $result2 = $conn->query($sql);
+
+        if($result && $result2){
+            $conn->commit();
+        }else{
+            $conn->rollback();
+            $message = "feeeeeeel";
+            echo "<script type='text/javascript'>alert('$message');</script>";
+        }
+        $conn->autocommit(TRUE);
         
         $conn->close();
         header("Location: http://92.32.39.21:8080/kassa.php");
