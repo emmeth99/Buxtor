@@ -79,11 +79,12 @@
             
             while($row = $result->fetch_assoc()) { 
                 $författare = $row["Författare"];
+                echo 0;
                 if ($författare[0] == "A" || "B" || "C" || "D"|| "E"){?>
 
                 <tr>
                     <td> <a href=" <?php echo "info_produkt.php?artikelnr=".$row['ArtikelNr'] ?> "> <img src="<?php echo $row["Bild"] ?>" class="produktBild"></a> </td>
-
+                    1
                     <td> <p style="font-size:20px"><a href=" <?php echo "info_produkt.php?artikelnr=".$row['ArtikelNr'] ?> "> <?php echo $row["ArtikelNamn"] ?> </a></p> </td>
                     
                     <td> <?php echo $row["Författare"] ?> </td>
@@ -96,7 +97,7 @@
                 if($författare[0] == "F" || "G" || "H" || "I" || "J") {?>
                     <tr>
                     <td> <a href=" <?php echo "info_produkt.php?artikelnr=".$row['ArtikelNr'] ?> "> <img src="<?php echo $row["Bild"] ?>" class="produktBild"></a> </td>
-
+                    2
                     <td> <p style="font-size:20px"><a href=" <?php echo "info_produkt.php?artikelnr=".$row['ArtikelNr'] ?> "> <?php echo $row["ArtikelNamn"] ?> </a></p> </td>
                     
                     <td> <?php echo $row["Författare"] ?> </td>
@@ -109,7 +110,7 @@
                 if($författare[0] == "K" || "L" || "M" || "N" || "O") {?>
                     <tr>
                     <td> <a href=" <?php echo "info_produkt.php?artikelnr=".$row['ArtikelNr'] ?> "> <img src="<?php echo $row["Bild"] ?>" class="produktBild"></a> </td>
-
+                    3
                     <td> <p style="font-size:20px"><a href=" <?php echo "info_produkt.php?artikelnr=".$row['ArtikelNr'] ?> "> <?php echo $row["ArtikelNamn"] ?> </a></p> </td>
                     
                     <td> <?php echo $row["Författare"] ?> </td>
@@ -122,7 +123,7 @@
                 if($författare[0] == "P" || "Q" || "R" || "S" || "T") {?>
                     <tr>
                     <td> <a href=" <?php echo "info_produkt.php?artikelnr=".$row['ArtikelNr'] ?> "> <img src="<?php echo $row["Bild"] ?>" class="produktBild"></a> </td>
-
+                    4
                     <td> <p style="font-size:20px"><a href=" <?php echo "info_produkt.php?artikelnr=".$row['ArtikelNr'] ?> "> <?php echo $row["ArtikelNamn"] ?> </a></p> </td>
                     
                     <td> <?php echo $row["Författare"] ?> </td>
@@ -135,7 +136,7 @@
                 if($författare[0] == "U" || "V" || "W" || "X" || "Y" || "Z"|| "Å" || "Ä" || "Ö") {?>
                     <tr>
                     <td> <a href=" <?php echo "info_produkt.php?artikelnr=".$row['ArtikelNr'] ?> "> <img src="<?php echo $row["Bild"] ?>" class="produktBild"></a> </td>
-
+                    5
                     <td> <p style="font-size:20px"><a href=" <?php echo "info_produkt.php?artikelnr=".$row['ArtikelNr'] ?> "> <?php echo $row["ArtikelNamn"] ?> </a></p> </td>
                     
                     <td> <?php echo $row["Författare"] ?> </td>
