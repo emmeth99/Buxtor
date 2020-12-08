@@ -22,16 +22,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $artikel = $_POST['artikelnr'];
     $antal = $_POST['antal'];
 
+    $sql = "SELECT Lagersaldo FROM Vara WHERE ArtikelNr = '$artikel'";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
 
-    if($antal == 0){
-        $sql = "DELETE FROM Varukorg WHERE ArtikelNr = '$artikel' AND KundNr = '$kaka'";
-    }else{
-        $sql = "UPDATE Varukorg SET Antal = '$antal' WHERE ArtikelNr = '$artikel' AND KundNr = '$kaka'";
+    if($antal <= $row['Lagersaldo']){
+
+        if($antal == 0){
+            $sql = "DELETE FROM Varukorg WHERE ArtikelNr = '$artikel' AND KundNr = '$kaka'";
+        }else{
+            $sql = "UPDATE Varukorg SET Antal = '$antal' WHERE ArtikelNr = '$artikel' AND KundNr = '$kaka'";
+        }
+        $conn->query($sql);
+    
+    
+        //$sql = "UPDATE Vara SET Lagersaldo = Lagersaldo + ";
+
     }
-    $conn->query($sql);
 
 
-    //$sql = "UPDATE Vara SET Lagersaldo = Lagersaldo + ";
+    
     
     $conn->close();
 }
