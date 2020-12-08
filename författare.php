@@ -80,7 +80,7 @@
             while($row = $result->fetch_assoc()) { ?>
 
                 <tr>
-                    <td>  <img src="<?php echo $row["Bild"] ?>" class="produktBild"> </td>
+                    <td> <a href=" <?php echo "info_produkt.php?artikelnr=".$row['ArtikelNr'] ?> "> <img src="<?php echo $row["Bild"] ?>" class="produktBild"></a> </td>
 
                     <td> <p style="font-size:20px"><a href=" <?php echo "info_produkt.php?artikelnr=".$row['ArtikelNr'] ?> "> <?php echo $row["ArtikelNamn"] ?> </a></p> </td>
                     
