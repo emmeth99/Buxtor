@@ -24,6 +24,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     
     if(isset($_COOKIE['user']) && $_SESSION['rank'] == 'kund'){
 
+        $sql = "SELECT Lagersaldo FROM Vara WHERE ArtikelNr = '$artikel'";
+
+        if(){
+
+        }
+
         include "connectDB.php";
 
         $artikel = $_POST["artikel"];
@@ -52,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             $conn->commit();
         }else{
             $conn->rollback();
-            $message = "feeeeeeel";
+            $message = "Något gick fel, vänligen försök igen";
             echo "<script type='text/javascript'>alert('$message');</script>";
         }
         $conn->autocommit(TRUE);
