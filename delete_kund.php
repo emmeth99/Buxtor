@@ -19,7 +19,7 @@
 
         <div class="kund">
 
-            <h2>Ödelägga mitt konto</h2>
+            <h2>Ödelägg mitt konto</h2>
 
 
             <button onclick="myFunction()">Förinta mitt konto</button>
