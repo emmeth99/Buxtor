@@ -79,7 +79,7 @@
             
             while($row = $result->fetch_assoc()) { 
                 $författare = $row["Författare"];
-                echo $författare;
+                echo $författare[0];
                 if ($författare[0] == "A" || "B" || "C" || "D"|| "E"){?>
 
                 <tr>
