@@ -104,7 +104,8 @@
                     
 
                 </tr>
-                <?php}
+                <?php
+                }
                 if($författare[0] == "K" || "L" || "M" || "N" || "O") {?>
                     <tr>
                     <td> <a href=" <?php echo "info_produkt.php?artikelnr=".$row['ArtikelNr'] ?> "> <img src="<?php echo $row["Bild"] ?>" class="produktBild"></a> </td>
@@ -116,7 +117,8 @@
                     
 
                 </tr>
-                <?php}
+                <?php
+                }
                 if($författare[0] == "P" || "Q" || "R" || "S" || "T") {?>
                     <tr>
                     <td> <a href=" <?php echo "info_produkt.php?artikelnr=".$row['ArtikelNr'] ?> "> <img src="<?php echo $row["Bild"] ?>" class="produktBild"></a> </td>
@@ -128,7 +130,8 @@
                     
 
                 </tr>
-                <?php}
+                <?php
+                }
                 if($författare[0] == "U" || "V" || "W" || "X" || "Y" || "Z"|| "Å" || "Ä" || "Ö") {?>
                     <tr>
                     <td> <a href=" <?php echo "info_produkt.php?artikelnr=".$row['ArtikelNr'] ?> "> <img src="<?php echo $row["Bild"] ?>" class="produktBild"></a> </td>
@@ -140,7 +143,8 @@
                     
 
                 </tr>
-                <?php}
+                <?php
+                }
                 
             }
             $conn->close();

@@ -32,11 +32,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();
 
-        if($row['Lagersaldo'] < $antal){
+        if($row['Lagersaldo'] >= $antal){
 
             $kaka = $_COOKIE["user"];
             
-
         
             $sql = "SELECT Antal FROM Varukorg WHERE (ArtikelNr = '$artikel' AND KundNr = '$kaka')";
             $result = $conn->query($sql);
@@ -66,6 +65,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             $conn->close();
             header("Location: http://92.32.39.21:8080/kassa.php");
             }else{
+                $artikel = $_POST["artikel"];
+                $message = "Så där många kan du inte köpa";
+                echo "<script type='text/javascript'>alert('$message');</script>";
 
         }
 
