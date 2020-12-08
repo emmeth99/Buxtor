@@ -22,13 +22,10 @@
         }
         
 
-        
-
         $täljare = ($gamlabetyg + $betyg);
         $nämnare = ($antal+1);
 
        
-        
         if($antal = 0){
             $nyttbetyg = $betyg;
         }else{
@@ -49,8 +46,6 @@
             $message = "Något gick fel, vänligen försök igen";
             echo "<script type='text/javascript'>alert('$message');window.location.href = 'minsida_kund.php';</script>";
         }
-
-        
 
     }
     

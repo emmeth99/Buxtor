@@ -26,18 +26,41 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
 
-    if($antal <= $row['Lagersaldo']){
+    $sql = "SELECT Antal FROM Varukorg WHERE ArtikelNr = '$artikel' AND KundNr = '$kaka'";
+    $result2 = $conn->query($sql);
+    $row2= $result2->fetch_assoc();
+
+    $diff = $antal - $row2['Antal'];
+
+
+    if($diff <= $row['Lagersaldo']){
+        $conn->autocommit(FALSE);
+        if($antal > $row2['Antal']){
+            $sql = "UPDATE Vara SET Lagersaldo = Lagersaldo - '$diff' WHERE ArtikelNr = '$artikel'";
+        }else{
+            $sql = "UPDATE Vara SET Lagersaldo = Lagersaldo - '$diff' WHERE ArtikelNr = '$artikel'";
+        }
+        $result = $conn->query($sql);
 
         if($antal == 0){
             $sql = "DELETE FROM Varukorg WHERE ArtikelNr = '$artikel' AND KundNr = '$kaka'";
         }else{
             $sql = "UPDATE Varukorg SET Antal = '$antal' WHERE ArtikelNr = '$artikel' AND KundNr = '$kaka'";
         }
-        $conn->query($sql);
-    
-    
-        //$sql = "UPDATE Vara SET Lagersaldo = Lagersaldo + ";
+        $result2 = $conn->query($sql);
 
+        if($result && $result2){
+            $conn->commit();
+        }else{
+            $conn->rollback();
+        }
+        
+        $conn->autocommit(TRUE);
+        
+
+    }else{
+        $message = "Finns inte tillräckligt många i lagret tyvärr";
+        echo "<script type='text/javascript'>alert('$message');</script>";
     }
 
 
