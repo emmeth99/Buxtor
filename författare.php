@@ -19,38 +19,11 @@
 
     <div class="nav3">
         <ul class="nav3-ul">
-            <li class="nav3-li"> <a class="nav3-lia" href="#A">A</a> </li>
-            <li class="nav3-li"> <a class="nav3-lia" href="#B">B</a></li>
-            <li class="nav3-li"> <a class="nav3-lia" href="#C">C</a></li>
-            <li class="nav3-li"> <a class="nav3-lia" href="#D">D</a></li>
-            <li class="nav3-li"> <a class="nav3-lia" href="#E">E</a></li>
-            <li class="nav3-li"> <a class="nav3-lia" href="#F">F</a></li>
-            <li class="nav3-li"> <a class="nav3-lia" href="#G">G</a></li>
-            <li class="nav3-li"> <a class="nav3-lia" href="#H">H</a></li>
-            <li class="nav3-li"> <a class="nav3-lia" href="#I">I</a></li>
-            <li class="nav3-li"> <a class="nav3-lia" href="#J">J</a></li>
-            <li class="nav3-li"> <a class="nav3-lia" href="#K">K</a></li>
-            <li class="nav3-li"> <a class="nav3-lia" href="#L">L</a></li>
-            <li class="nav3-li"> <a class="nav3-lia" href="#M">M</a></li>
-            <li class="nav3-li"> <a class="nav3-lia" href="#N">N</a></li>
-            <li class="nav3-li"> <a class="nav3-lia" href="#O">O</a></li>
-        </ul>
-        <ul class="nav3-ul">
-            <li class="nav3-li"> <a class="nav3-lia" href="#P">P</a></li>
-            <li class="nav3-li"> <a class="nav3-lia" href="#Q">Q</a></li>
-            <li class="nav3-li"> <a class="nav3-lia" href="#R">R</a></li>
-            <li class="nav3-li"> <a class="nav3-lia" href="#S">S</a></li>
-            <li class="nav3-li"> <a class="nav3-lia" href="#T">T</a></li>
-            <li class="nav3-li"> <a class="nav3-lia" href="#U">U</a></li>
-            <li class="nav3-li"> <a class="nav3-lia" href="#V">V</a></li>
-            <li class="nav3-li"> <a class="nav3-lia" href="#W">W</a></li>
-            <li class="nav3-li"> <a class="nav3-lia" href="#X">X</a></li>
-            <li class="nav3-li"> <a class="nav3-lia" href="#Y">Y</a></li>
-            <li class="nav3-li"> <a class="nav3-lia" href="#Z">Z</a></li>
-            <li class="nav3-li"> <a class="nav3-lia" href="#Å">Å</a></li>
-            <li class="nav3-li"> <a class="nav3-lia" href="#Ä">Ä</a></li>
-            <li class="nav3-li"> <a class="nav3-lia" href="#Ö">Ö</a></li>
-            <li class="nav3-li"> </li>
+            <li class="nav3-li"> <a class="nav3-lia" href="#ABCDE">A-E</a> </li>
+            <li class="nav3-li"> <a class="nav3-lia" href="#FGHIJ">F-J</a></li>
+            <li class="nav3-li"> <a class="nav3-lia" href="#KLMNO">K-O</a></li>
+            <li class="nav3-li"> <a class="nav3-lia" href="#PQRST">P-T</a></li>
+            <li class="nav3-li"> <a class="nav3-lia" href="#UVWXYZÅÄÖ">U-Ö</a></li>
         </ul>
     
     </div>
@@ -83,6 +56,7 @@
                 if ($författare[0] == "A" || $författare[0] == "B" || $författare[0] == "C" || $författare[0] == "D" || $författare[0] == "E"){?>
 
                 <tr>
+                    <a id=ABCDE></a>
                     <td> <a href=" <?php echo "info_produkt.php?artikelnr=".$row['ArtikelNr'] ?> "> <img src="<?php echo $row["Bild"] ?>" class="produktBild"></a> </td>
                     1
                     <td> <p style="font-size:20px"><a href=" <?php echo "info_produkt.php?artikelnr=".$row['ArtikelNr'] ?> "> <?php echo $row["ArtikelNamn"] ?> </a></p> </td>
@@ -96,6 +70,7 @@
                 <?php }
                 else if($författare[0] == "F" || $författare[0] == "G" || $författare[0] == "H" || $författare[0] == "I" || $författare[0] == "J") {?>
                     <tr>
+                    <a id=FGHIJ></a>
                     <td> <a href=" <?php echo "info_produkt.php?artikelnr=".$row['ArtikelNr'] ?> "> <img src="<?php echo $row["Bild"] ?>" class="produktBild"></a> </td>
                     2
                     <td> <p style="font-size:20px"><a href=" <?php echo "info_produkt.php?artikelnr=".$row['ArtikelNr'] ?> "> <?php echo $row["ArtikelNamn"] ?> </a></p> </td>
@@ -109,6 +84,7 @@
                 }
                 else if($författare[0] == "K" || $författare[0] == "L" || $författare[0] == "M" || $författare[0] == "N" || $författare[0] == "O") {?>
                     <tr>
+                    <a id=KLMNO></a>
                     <td> <a href=" <?php echo "info_produkt.php?artikelnr=".$row['ArtikelNr'] ?> "> <img src="<?php echo $row["Bild"] ?>" class="produktBild"></a> </td>
                     3
                     <td> <p style="font-size:20px"><a href=" <?php echo "info_produkt.php?artikelnr=".$row['ArtikelNr'] ?> "> <?php echo $row["ArtikelNamn"] ?> </a></p> </td>
@@ -122,6 +98,7 @@
                 }
                 else if($författare[0] == "P" || $författare[0] == "Q" || $författare[0] == "R" || $författare[0] == "S" || $författare[0] == "T") {?>
                     <tr>
+                    <a id=PQRST></a>
                     <td> <a href=" <?php echo "info_produkt.php?artikelnr=".$row['ArtikelNr'] ?> "> <img src="<?php echo $row["Bild"] ?>" class="produktBild"></a> </td>
                     4
                     <td> <p style="font-size:20px"><a href=" <?php echo "info_produkt.php?artikelnr=".$row['ArtikelNr'] ?> "> <?php echo $row["ArtikelNamn"] ?> </a></p> </td>
@@ -135,6 +112,7 @@
                 }
                 else if($författare[0] == "U" || $författare[0] == "V" || $författare[0] == "W" || $författare[0] == "X" || $författare[0] == "Y" || $författare[0] == "Z"|| $författare[0] == "Å" || $författare[0] == "Ä" || $författare[0] == "Ö") {?>
                     <tr>
+                    <a id=UVWXYZÅÄÖ></a>
                     <td> <a href=" <?php echo "info_produkt.php?artikelnr=".$row['ArtikelNr'] ?> "> <img src="<?php echo $row["Bild"] ?>" class="produktBild"></a> </td>
                     5
                     <td> <p style="font-size:20px"><a href=" <?php echo "info_produkt.php?artikelnr=".$row['ArtikelNr'] ?> "> <?php echo $row["ArtikelNamn"] ?> </a></p> </td>
