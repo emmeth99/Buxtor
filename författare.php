@@ -52,7 +52,7 @@
             
             while($row = $result->fetch_assoc()) { 
                 $författare = $row["Författare"];
-                if ($författare[0] == ("A" || "a") || $författare[0] == "B" || $författare[0] == "C" || $författare[0] == "D" || $författare[0] == "E"){?>
+                if ($författare[0] == "A" || $författare[0] == "B" || $författare[0] == "C" || $författare[0] == "D" || $författare[0] == "E"){?>
 
                 <tr id=ABCDE>
                     
@@ -71,7 +71,7 @@
                     <tr id='FGHIJ'>
                     
                     <td> <a href=" <?php echo "info_produkt.php?artikelnr=".$row['ArtikelNr'] ?> "> <img src="<?php echo $row["Bild"] ?>" class="produktBild"></a> </td>
-                    
+                    4
                     <td> <p style="font-size:20px"><a href=" <?php echo "info_produkt.php?artikelnr=".$row['ArtikelNr'] ?> "> <?php echo $row["ArtikelNamn"] ?> </a></p> </td>
                     
                     <td> <?php echo $row["Författare"] ?> </td>
