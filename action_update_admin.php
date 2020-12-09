@@ -19,7 +19,7 @@ $besk = $_POST['besk'];
 $saldo = $_POST['saldo'];
 
 
-$sql = "UPDATE `Vara` SET `ArtikelNamn`='$name',`Pris`='$pris',`Genre`='$genre',`Författare`='$author',`Beskrivning`='$besk', `Lagersaldo` = '$saldo' WHERE `ArtikelNr`='$article'";
+$sql = "UPDATE `Vara` SET `ArtikelNamn`='$name',`Pris`='$pris',`Genre`='$genre',`Författare`='$author',Beskrivning='$besk', `Lagersaldo` = '$saldo' WHERE `ArtikelNr`='$article'";
 
 if ($conn->query($sql) == TRUE) {
     echo "New record created successfully";

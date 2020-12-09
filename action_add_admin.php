@@ -9,12 +9,8 @@
 
 
 include "connectDB.php";
-$sql = "SELECT ArtikelNr FROM Vara ORDER BY ArtikelNr DESC";
-$result = $conn->query($sql);
-$row = $result->fetch_assoc();
-$ArtikelNr = $row['ArtikelNr'] + 1;
 
-echo $ArtikelNr;
+
 
 $name = $_POST['name'];
 $pris = $_POST['pris'];
@@ -23,10 +19,13 @@ $author = $_POST['author'];
 $besk = $_POST['besk'];
 $saldo = $_POST['saldo'];
 
-$conn->autocommit(FALSE);
 
-$result = $sql = "INSERT INTO `Vara`(`ArtikelNamn`, `Pris`, `Genre`, `Författare`, `Beskrivning`, `Lagersaldo`) 
-VALUES ('$name','$pris','$genre','$author','$besk', '$saldo')";
+
+$target_dir = "images/";
+$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+
+$sql = "INSERT INTO `Vara`(`ArtikelNamn`, `Pris`, `Genre`, `Författare`, Bild, Beskrivning, `Lagersaldo`) 
+VALUES ('$name','$pris','$genre','$author', '$target_file', '$besk', '$saldo')";
 
 $conn->query($sql);
 //if ($conn->query($sql) == TRUE) {
@@ -35,19 +34,7 @@ $conn->query($sql);
     //echo "Error: " . $sql . "<br>" . $conn->error;
 //}
 
-$bildURL = "images/" . $ArtikelNr . ".jpg";
 
-$sql = "UPDATE Vara SET Bild = '$bildURL' WHERE ArtikelNr = '$ArtikelNr'";
-//Ta EJ bort nedanstående rad, den är livsviktig
-$result2 = $conn->query($sql);
-
-if($result && $result2){
-  $conn->commit();
-}else{
-  $conn->rollback();
-}
-
-$conn->autocommit(TRUE);
 
 $conn->close();
 
@@ -72,7 +59,7 @@ if(isset($_POST["submit"])) {
 if ($_FILES["fileToUpload"]["size"] > 500000) {
   //echo "Sorry, your file is too large.";
   $message = "Filen är för stor!";
-  echo "<script type='text/javascript'>alert('$message');window.location.href = 'add_admin.php';</script>";
+  //echo "<script type='text/javascript'>alert('$message');window.location.href = 'add_admin.php';</script>";
   $uploadOk = 0;
 }
 
@@ -93,7 +80,7 @@ if ($uploadOk == 0) {
   if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
     //echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
     $message = "Varan har lagts till!";
-    echo "<script type='text/javascript'>alert('$message');window.location.href = 'minsida_admin.php';</script>";
+    //echo "<script type='text/javascript'>alert('$message');window.location.href = 'minsida_admin.php';</script>";
   } else {
     echo "Sorry, there was an error uploading your file.";
     echo " error: ".$_FILES['fileToUpload']['error'];
