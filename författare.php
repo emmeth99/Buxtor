@@ -68,7 +68,7 @@
 
                 <?php }
                 else if($författare[0] == "F" || $författare[0] == "G" || $författare[0] == "H" || $författare[0] == "I" || $författare[0] == "J") {?>
-                    <tr id=FGHIJ>
+                    <tr id='FGHIJ'>
                     
                     <td> <a href=" <?php echo "info_produkt.php?artikelnr=".$row['ArtikelNr'] ?> "> <img src="<?php echo $row["Bild"] ?>" class="produktBild"></a> </td>
                     
