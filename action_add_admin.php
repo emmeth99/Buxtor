@@ -24,15 +24,6 @@ $saldo = $_POST['saldo'];
 $target_dir = "images/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 
-$sql = "INSERT INTO `Vara`(`ArtikelNamn`, `Pris`, `Genre`, `Författare`, Bild, Beskrivning, `Lagersaldo`) 
-VALUES ('$name','$pris','$genre','$author', '$target_file', '$besk', '$saldo')";
-
-
-if ($conn->query($sql) == TRUE) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
 
 
 $conn->close();
@@ -56,7 +47,7 @@ if(isset($_POST["submit"])) {
 if (file_exists($target_file)) {
   //echo "Sorry, file already exists.";
   $message = "Filen existerar redan!";
-  //echo "<script type='text/javascript'>alert('$message');window.location.href = 'add_admin.php';</script>";
+  echo "<script type='text/javascript'>alert('$message');window.location.href = 'add_admin.php';</script>";
   $uploadOk = 0;
 
 }
@@ -65,7 +56,7 @@ if (file_exists($target_file)) {
 if ($_FILES["fileToUpload"]["size"] > 500000) {
   //echo "Sorry, your file is too large.";
   $message = "Filen är för stor!";
-  //echo "<script type='text/javascript'>alert('$message');window.location.href = 'add_admin.php';</script>";
+  echo "<script type='text/javascript'>alert('$message');window.location.href = 'add_admin.php';</script>";
   $uploadOk = 0;
 }
 
@@ -74,7 +65,7 @@ if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg
 && $imageFileType != "gif" ) {
   //echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
   $message = "Endast JPG, JPEG, PNG & GIF filer!";
-  //echo "<script type='text/javascript'>alert('$message');window.location.href = 'add_admin.php';</script>";
+  echo "<script type='text/javascript'>alert('$message');window.location.href = 'add_admin.php';</script>";
   $uploadOk = 0;
 }
 
@@ -85,8 +76,14 @@ if ($uploadOk == 0) {
 } else {
   if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
     //echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+
+  $sql = "INSERT INTO `Vara`(`ArtikelNamn`, `Pris`, `Genre`, `Författare`, Bild, Beskrivning, `Lagersaldo`) 
+  VALUES ('$name','$pris','$genre','$author', '$target_file', '$besk', '$saldo')";
+
+  $conn->query($sql);
+  
     $message = "Varan har lagts till!";
-    //echo "<script type='text/javascript'>alert('$message');window.location.href = 'minsida_admin.php';</script>";
+    echo "<script type='text/javascript'>alert('$message');window.location.href = 'minsida_admin.php';</script>";
   } else {
     echo "Sorry, there was an error uploading your file.";
     echo " error: ".$_FILES['fileToUpload']['error'];
