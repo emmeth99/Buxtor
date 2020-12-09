@@ -96,7 +96,7 @@
                 <?php
                 }
                 else if($författare[0] == "P" || $författare[0] == "Q" || $författare[0] == "R" || $författare[0] == "S" || $författare[0] == "T") {?>
-                    <tr id=PQRST>
+                    <tr id="PQRST">
                 
                     <td> <a href=" <?php echo "info_produkt.php?artikelnr=".$row['ArtikelNr'] ?> "> <img src="<?php echo $row["Bild"] ?>" class="produktBild"></a> </td>
                     
