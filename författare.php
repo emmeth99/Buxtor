@@ -54,7 +54,7 @@
                 $författare = $row["Författare"];
                 if ($författare[0] == "A" || $författare[0] == "B" || $författare[0] == "C" || $författare[0] == "D" || $författare[0] == "E"){?>
 
-                <tr id=ABCDE>
+                <tr id="ABCDE">
                     
                     <td> <a href=" <?php echo "info_produkt.php?artikelnr=".$row['ArtikelNr'] ?> "> <img src="<?php echo $row["Bild"] ?>" class="produktBild"></a> </td>
                     
@@ -68,7 +68,7 @@
 
                 <?php }
                 else if($författare[0] == "F" || $författare[0] == "G" || $författare[0] == "H" || $författare[0] == "I" || $författare[0] == "J") {?>
-                    <tr id='FGHIJ'>
+                    <tr id="FGHIJ">
                     
                     <td> <a href=" <?php echo "info_produkt.php?artikelnr=".$row['ArtikelNr'] ?> "> <img src="<?php echo $row["Bild"] ?>" class="produktBild"></a> </td>
                     
@@ -82,7 +82,7 @@
                 <?php
                 }
                 else if($författare[0] == "K" || $författare[0] == "L" || $författare[0] == "M" || $författare[0] == "N" || $författare[0] == "O") {?>
-                    <tr id=KLMNO>
+                    <tr id="KLMNO">
                     
                     <td> <a href=" <?php echo "info_produkt.php?artikelnr=".$row['ArtikelNr'] ?> "> <img src="<?php echo $row["Bild"] ?>" class="produktBild"></a> </td>
                     
@@ -110,7 +110,7 @@
                 <?php
                 }
                 else  {?>
-                    <tr id=UVWXYZÅÄÖ>
+                    <tr id="UVWXYZÅÄÖ">
 
                     <td> <a href=" <?php echo "info_produkt.php?artikelnr=".$row['ArtikelNr'] ?> "> <img src="<?php echo $row["Bild"] ?>" class="produktBild"></a> </td>
                     
