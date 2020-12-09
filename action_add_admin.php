@@ -27,19 +27,16 @@ $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $sql = "INSERT INTO `Vara`(`ArtikelNamn`, `Pris`, `Genre`, `Författare`, Bild, Beskrivning, `Lagersaldo`) 
 VALUES ('$name','$pris','$genre','$author', '$target_file', '$besk', '$saldo')";
 
-$conn->query($sql);
-//if ($conn->query($sql) == TRUE) {
-    //echo "New record created successfully";
-//} else {
-    //echo "Error: " . $sql . "<br>" . $conn->error;
-//}
 
+if ($conn->query($sql) == TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
 
 
 $conn->close();
 
-$target_dir = "images/";
-$target_file = $bildURL;
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
