@@ -52,6 +52,15 @@ if(isset($_POST["submit"])) {
   }
 }
 
+// Check if file already exists
+if (file_exists($target_file)) {
+  //echo "Sorry, file already exists.";
+  $message = "Filen existerar redan!";
+  //echo "<script type='text/javascript'>alert('$message');window.location.href = 'add_admin.php';</script>";
+  $uploadOk = 0;
+
+}
+
 // Check file size
 if ($_FILES["fileToUpload"]["size"] > 500000) {
   //echo "Sorry, your file is too large.";
@@ -65,7 +74,7 @@ if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg
 && $imageFileType != "gif" ) {
   //echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
   $message = "Endast JPG, JPEG, PNG & GIF filer!";
-  echo "<script type='text/javascript'>alert('$message');window.location.href = 'add_admin.php';</script>";
+  //echo "<script type='text/javascript'>alert('$message');window.location.href = 'add_admin.php';</script>";
   $uploadOk = 0;
 }
 
