@@ -79,9 +79,10 @@
 
                     $pris = $row2['Pris'];
 
+                    $conn->autocommit(FALSE);
                     $sql = "INSERT INTO `BeställningVara`(`OrderNr`, `ArtikelNr`, `Antal`, `Pris`) 
                     VALUES ('$ordernr', '$artikel', '$antal', '$pris')";
-                    $conn->query($sql);
+                    $result3 = $conn->query($sql);
 
                     ?>
                         <tr> 
@@ -93,7 +94,16 @@
                     <?php    
 
                     $sql = "DELETE FROM Varukorg WHERE KundNr = '$kaka'";
-                    $conn->query($sql);
+                    $result4 = $conn->query($sql);
+
+                    if($result3 && $result4){
+                        $conn->commit();
+                    }else{
+                        $conn->rollback();
+                        $message = "Något gick fel, vänligen försök igen";
+                        echo "<script type='text/javascript'>alert('$message');</script>";
+                    }
+                    $conn->autocommit(TRUE);
 
                 }
 
