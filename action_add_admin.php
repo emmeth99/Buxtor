@@ -85,8 +85,8 @@ if ($uploadOk == 0) {
       $conn->autocommit(TRUE);
       $conn->close();
   } else {
-    echo "Något gick fel, vänligen försök igen";
-    echo " error: ".$_FILES['fileToUpload']['error'];
+    $message = "Något gick fel, vänligen försök igen.";
+    echo "<script type='text/javascript'>alert('$message');</script>";
   }
 }
 
