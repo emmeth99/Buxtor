@@ -21,6 +21,10 @@
         <div class="bild">
 
             <div class="delete"> 
+                <?php 
+                if($_SESSION == 'admin'){
+
+                ?>
                 <h2>Utplåna vara</h2>
 
                 <form action="action_delete_admin.php" method="post">
@@ -30,6 +34,14 @@
                 </form> 
 
             </div>
+            <?php
+                }else{
+                ?>
+                    <h1> Du är inte admin! &#128545</h1>
+
+                <?php
+                }   
+                ?>
 
         </div>
             

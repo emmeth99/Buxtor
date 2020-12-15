@@ -18,50 +18,64 @@
     <div class="container">
 
     <div class="bild">
+
+    <?php 
+        if($_SESSION == 'admin'){
+
+        ?>
     
 
-        <br>
-        <br>
-        <div class="tabell">
-        <table style="width:100%"><tr>
-                <th></th>
-                <th style="font-size:30px">Titel</th>
-                <th style="font-size:30px">Artikelnr</th>
-                
-                
-            </tr>
-            
-            
-            <?php
-            include "connectDB.php";
-
-            $sql = "SELECT * FROM Vara";
-            $result = $conn->query($sql);
-
-            
-            while($row = $result->fetch_assoc()) { ?>
-
-                <tr>
-                    <td>  <img src="<?php echo $row["Bild"] ?>" class="produktBild"> </td>
-
-                    <td> <p style="font-size:20px"> <?php echo $row["ArtikelNamn"] ?> </a> </td>
-                    
-                    <td> <?php echo $row["ArtikelNr"] ?> </p></td>
+            <br>
+            <br>
+            <div class="tabell">
+            <table style="width:100%"><tr>
+                    <th></th>
+                    <th style="font-size:30px">Titel</th>
+                    <th style="font-size:30px">Artikelnr</th>
                     
                     
-
                 </tr>
+                
+                
+                <?php
+                include "connectDB.php";
 
-            <?php 
-            }
-            $conn->close();
-        ?>
-
+                $sql = "SELECT * FROM Vara";
+                $result = $conn->query($sql);
 
                 
-        </table>
+                while($row = $result->fetch_assoc()) { ?>
+
+                    <tr>
+                        <td>  <img src="<?php echo $row["Bild"] ?>" class="produktBild"> </td>
+
+                        <td> <p style="font-size:20px"> <?php echo $row["ArtikelNamn"] ?> </a> </td>
+                        
+                        <td> <?php echo $row["ArtikelNr"] ?> </p></td>
+                        
+                        
+
+                    </tr>
+
+                <?php 
+                }
+                $conn->close();
+            ?>
+
+
+                    
+            </table>
+            </div>
+            <?php
+        }else{
+        ?>
+            <h1> Du är inte admin! &#128545</h1>
+
+        <?php
+        }   
+        ?>
         </div>
-    </div>
+
 
 
         
