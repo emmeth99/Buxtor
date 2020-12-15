@@ -29,7 +29,7 @@
 
                 <form action="action_delete_kund_admin.php" method="post">
                 <label for="kund">Kundnummer:</label><br>
-                <input type="number" id="kund" name="kund"><br><br>
+                <input type="number" id="kund" name="kund" min="2"><br><br>
                 <input type="submit" value="Avrätta">
                 </form> 
 
