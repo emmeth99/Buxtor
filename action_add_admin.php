@@ -67,19 +67,25 @@ if ($uploadOk == 0) {
   echo "Sorry, your file was not uploaded.";
 // if everything is ok, try to upload file
 } else {
-  if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-    //echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
-    include "connectDB.php";
-    $sql = "INSERT INTO `Vara`(`ArtikelNamn`, `Pris`, `Genre`, `Författare`, Bild, Beskrivning, `Lagersaldo`) 
+  include "connectDB.php";
+  $conn->autocommit(FALSE);
+  $sql = "INSERT INTO `Vara`(`ArtikelNamn`, `Pris`, `Genre`, `Författare`, Bild, Beskrivning, `Lagersaldo`) 
     VALUES ('$name','$pris','$genre','$author', '$target_file', '$besk', '$saldo')";
-    $conn->query($sql);
-    $conn->close();
-
-
-    $message = "Varan har lagts till!";
-    echo "<script type='text/javascript'>alert('$message');window.location.href = 'minsida_admin.php';</script>";
+    if($conn->query($sql)){
+      if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+        $message = "Varan har lagts till!";
+        echo "<script type='text/javascript'>alert('$message');window.location.href = 'minsida_admin.php';</script>";
+        $conn->commit(); 
+      }
+      else{
+        $conn->rollback();
+        $message = "Det blev fel i uppladdningen av bilden.";
+        echo "<script type='text/javascript'>alert('$message');</script>";
+      } 
+      $conn->autocommit(TRUE);
+      $conn->close();
   } else {
-    echo "Sorry, there was an error uploading your file.";
+    echo "Något gick fel, vänligen försök igen";
     echo " error: ".$_FILES['fileToUpload']['error'];
   }
 }
