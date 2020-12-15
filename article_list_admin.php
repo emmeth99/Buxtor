@@ -20,7 +20,7 @@
     <div class="bild">
 
     <?php 
-        if($_SESSION == 'admin'){
+        if($_SESSION['rank'] == 'admin'){
 
         ?>
     

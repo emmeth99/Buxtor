@@ -22,7 +22,7 @@
 
             <div class="delete"> 
                 <?php 
-                if($_SESSION == 'admin'){
+                if($_SESSION['rank'] == 'admin'){
 
                 ?>
                 <h2>Utplåna vara</h2>
