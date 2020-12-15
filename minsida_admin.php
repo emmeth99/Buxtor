@@ -21,7 +21,7 @@
 
             <div class="admin">
                 <?php 
-                if($_SESSION == 'admin'){
+                if($_SESSION['rank'] == 'admin'){
 
                 ?>
 
