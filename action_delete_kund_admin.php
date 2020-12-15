@@ -10,19 +10,19 @@
 
 include "connectDB.php";
 
-$article = $_POST['article'];
+$kund = $_POST['kund'];
 
-$sql = "DELETE FROM Vara Where ArtikelNr = $article";
+$sql = "DELETE FROM Konto Where KundNr = $kund";
 
 if ($conn->query($sql) == TRUE) {
-    $message = "Varan har dräpts";
+    $message = "Kunden har tagits bort.";
     echo "<script type='text/javascript'>alert('$message');window.location.href = 'minsida_admin.php';</script>";
 } else {
     $message = "Något gick fel. Försök igen.";
-    echo "<script type='text/javascript'>alert('$message');window.location.href = 'delete_admin.php';</script>";
+    echo "<script type='text/javascript'>alert('$message');window.location.href = 'delete_kund_admin.php';</script>";
 }
 
 $conn->close();
 
-header("Location: http://92.32.39.21:8080/minsida_admin.php");
+//header("Location: http://92.32.39.21:8080/minsida_admin.php");
 ?>
