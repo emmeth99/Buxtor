@@ -29,7 +29,7 @@
             <br>
             <div class="tabell">
             <table style="width:100%"><tr>
-                    <th style="font-size:30px">Kundnummer</th>
+                    <th style="font-size:30px">Kundnr</th>
                     <th style="font-size:30px">Kundnamn</th>
                     <th style="font-size:30px">E-post </th>
                     
