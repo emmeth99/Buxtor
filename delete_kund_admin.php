@@ -27,7 +27,7 @@
                 ?>
                 <h2>Assassinera kund</h2>
 
-                <form action="action_delete_kunder_admin.php" method="post">
+                <form action="action_delete_kund_admin.php" method="post">
                 <label for="kund">Kundnummer:</label><br>
                 <input type="number" id="kund" name="kund"><br><br>
                 <input type="submit" value="Avrätta">
