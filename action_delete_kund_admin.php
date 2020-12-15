@@ -23,7 +23,7 @@ if ($finns == 1) {
     //echo "<script type='text/javascript'>alert('$message');window.location.href = 'minsida_admin.php';</script>";
 } else {
     $message = "Något gick fel. Försök igen.";
-    echo "<script type='text/javascript'>alert('$message');window.location.href = 'delete_kund_admin.php';</script>";
+    //echo "<script type='text/javascript'>alert('$message');window.location.href = 'delete_kund_admin.php';</script>";
 }
 
 $conn->close();
