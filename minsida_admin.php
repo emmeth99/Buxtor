@@ -31,7 +31,7 @@
                 <a href="update_admin.php"> Redigera varor</a>   <br> 
                 <a href="delete_admin.php"> Ödelägga varor</a>   <br><br>
                 <a href="kunder_admin.php"> Kundlista</a>   <br>
-                <a href="delete_kunder_admin.php"> Undanröja kunder</a>   <br>
+                <a href="delete_kund_admin.php"> Undanröja kunder</a>   <br>
 
                 <form method="post" action="logout.php">
                     <button type="submit">Logga ut</button>
