@@ -20,6 +20,11 @@
         <div class="bild">
 
             <div class="admin">
+                <?php 
+                if($_SESSION == 'admin'){
+
+                ?>
+
                 <h1> Välkommen boss! </h1>
                 <a href="article_list_admin.php"> Artiklar </a>   <br>
                 <a href="add_admin.php"> Lägg till varor </a>   <br>
@@ -29,6 +34,14 @@
                 <form method="post" action="logout.php">
                     <button type="submit">Logga ut</button>
                 </form>
+                <?php
+                }else{
+                ?>
+                    <h1> Du är inte admin! &#128545</h1>
+
+                <?php
+                }   
+                ?>
             </div>
 
         </div>

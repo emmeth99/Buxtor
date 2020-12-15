@@ -127,7 +127,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     
                                 <tr>
                                     <td> <?php echo $row2['ArtikelNamn'] ?> </td>
-                                    <td> <?php echo $row2['Pris'] ?> </td>
+                                    <td> <?php echo $row2['Pris'] ?> kr</td>
                                     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                                         <input type="hidden" id="artikelnr" name="artikelnr" value="<?php echo $artikel ?>"> 
                                         <td> <input type="number" id="antal" name="antal" min="0" value="<?php echo $row['Antal'] ?>"> </td>
