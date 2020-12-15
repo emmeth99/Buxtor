@@ -14,7 +14,8 @@ $kund = $_POST['kund'];
 
 $sql = "DELETE FROM Konto Where KundNr = $kund";
 
-if ($conn->query($sql) == TRUE) {
+if ("SELECT COUNT(1) FROM Konto WHERE KundNr = $kund" == 1) {
+    $conn->query($sql)
     $message = "Kunden har tagits bort.";
     echo "<script type='text/javascript'>alert('$message');window.location.href = 'minsida_admin.php';</script>";
 } else {
