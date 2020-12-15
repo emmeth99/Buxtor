@@ -20,7 +20,7 @@ echo $finns;
 if ($finns == 1) {
     $conn->query($sql);
     $message = "Kunden har tagits bort.";
-    echo "<script type='text/javascript'>alert('$message');window.location.href = 'minsida_admin.php';</script>";
+    //echo "<script type='text/javascript'>alert('$message');window.location.href = 'minsida_admin.php';</script>";
 } else {
     $message = "Något gick fel. Försök igen.";
     echo "<script type='text/javascript'>alert('$message');window.location.href = 'delete_kund_admin.php';</script>";
