@@ -80,13 +80,13 @@ if ($uploadOk == 0) {
       else{
         $conn->rollback();
         $message = "Det blev fel i uppladdningen av bilden.";
-        echo "<script type='text/javascript'>alert('$message');</script>";
+        echo "<script type='text/javascript'>alert('$message');window.location.href = 'add_admin.php';</script>";
       } 
       $conn->autocommit(TRUE);
       $conn->close();
   } else {
     $message = "Något gick fel, vänligen försök igen.";
-    echo "<script type='text/javascript'>alert('$message');</script>";
+    echo "<script type='text/javascript'>alert('$message');window.location.href = 'add_admin.php';</script>";
   }
 }
 
