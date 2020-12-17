@@ -40,6 +40,19 @@
                 <th style="font-size:30px">Titel</th>
                 <th style="font-size:30px">Författare</th>
                 <th style="font-size:30px">Pris</th>
+                <th> 
+                    <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                        <input type="hidden" id="order" name ="order" value="ASC">
+                        <input type="submit" value="Pris - &#8593">
+                        
+                    </form>
+                    <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                        <input type="hidden" id="order" name ="order" value="DESC">
+                        <input type="submit" value="Pris - &#8595">
+                        
+                    </form>
+                    
+                </th>
                 
             </tr>
             
@@ -51,8 +64,20 @@
             if(isset($_GET['genre'])){
                 $genre = $_GET['genre'];
 
-                $sql = "SELECT * FROM Vara WHERE Genre = '$genre'";
-                $result = $conn->query($sql);
+                if ($_SERVER["REQUEST_METHOD"] == "POST"){
+                    $order = $_POST['order'];
+                    echo $order;
+                    $sql = "SELECT * FROM Vara WHERE Genre = '$genre' ORDER BY Pris $order";
+                }
+                else{
+                    $sql = "SELECT * FROM Vara WHERE Genre = '$genre'";
+                }
+                
+                if($result = $conn->query($sql)){
+                    echo "det gick";
+                }else{
+                    echo "det gick inte".$sql;
+                }
 
                 while($row = $result->fetch_assoc()) { ?>
 
@@ -64,14 +89,25 @@
                         <td> <?php echo $row["Författare"] ?> </td>
                         <td> <?php echo $row["Pris"] ?> kr </td>
                         
-
                     </tr>
 
                 <?php 
                 }
             }else{
+                if ($_SERVER["REQUEST_METHOD"] == "POST"){
+                    $order = $_POST['order'];
+                    echo $order;
+                    $sql = "SELECT * FROM Vara ORDER BY Pris $order";
+                }else{
+                    $sql = "SELECT * FROM Vara";
+                }
 
-                $sql = "SELECT * FROM Vara";
+                if($result = $conn->query($sql)){
+                    echo "det gick";
+                }else{
+                    echo "det gick inte".$sql;
+                }
+
                 $result = $conn->query($sql);
 
                 
